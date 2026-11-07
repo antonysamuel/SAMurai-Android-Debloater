@@ -1,0 +1,69 @@
+{
+  "minimal": {
+    "name": "Minimal",
+    "desc": "Remove only confirmed-safe bloat: Bixby, fonts, watch faces",
+    "remove_risks": [
+      "safe"
+    ],
+    "remove_categories": [
+      "Bloatware",
+      "Fonts",
+      "Watch Faces"
+    ],
+    "restrict_background": []
+  },
+  "iphone-efficiency": {
+    "name": "iPhone Efficiency",
+    "desc": "Remove all safe bloatware and restrict heavy background apps",
+    "remove_risks": [
+      "safe"
+    ],
+    "remove_categories": [
+      "Bloatware",
+      "Fonts",
+      "Watch Faces",
+      "Google",
+      "Samsung Services"
+    ],
+    "restrict_background": [
+      "com.flipkart.android",
+      "com.myntra.android",
+      "com.jio.myjio",
+      "in.swiggy.android",
+      "com.meesho.supply",
+      "com.grofers.customerapp",
+      "com.zeptoconsumerapp",
+      "com.truecaller",
+      "com.google.android.gms"
+    ]
+  },
+  "aggressive": {
+    "name": "Aggressive",
+    "desc": "Remove safe and caution packages — may affect some features",
+    "remove_risks": [
+      "safe",
+      "caution"
+    ],
+    "remove_categories": [
+      "Bloatware",
+      "Fonts",
+      "Watch Faces",
+      "Google",
+      "Samsung Services",
+      "Indian Apps"
+    ],
+    "restrict_background": [
+      "com.flipkart.android",
+      "com.myntra.android",
+      "com.jio.myjio",
+      "in.swiggy.android",
+      "com.meesho.supply",
+      "com.grofers.customerapp",
+      "com.zeptoconsumerapp",
+      "com.truecaller",
+      "com.google.android.gms",
+      "com.whatsapp",
+      "org.telegram.messenger"
+    ]
+  }
+}

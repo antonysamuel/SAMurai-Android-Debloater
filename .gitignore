@@ -1,0 +1,27 @@
+# Agent handoff (internal dev context, not for users)
+AGENT_HANDOFF.md
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# AI config (contains API keys)
+.ai_config.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Claude Code
+.claude/

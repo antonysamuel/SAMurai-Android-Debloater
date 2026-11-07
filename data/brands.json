@@ -1,0 +1,392 @@
+{
+  "xiaomi": {
+    "com.miui.analytics": {
+      "name": "MIUI Analytics",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Xiaomi telemetry"
+    },
+    "com.miui.daemon": {
+      "name": "MIUI Daemon",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Background telemetry service"
+    },
+    "com.miui.msa.global": {
+      "name": "MSA (MIUI Ad)",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Ad framework — major battery drain"
+    },
+    "com.miui.cloudservice": {
+      "name": "Mi Cloud",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Xiaomi cloud sync"
+    },
+    "com.miui.cloudbackup": {
+      "name": "Mi Cloud Backup",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Cloud backup"
+    },
+    "com.miui.player": {
+      "name": "Mi Music",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Music player"
+    },
+    "com.miui.videoplayer": {
+      "name": "Mi Video",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Video player"
+    },
+    "com.miui.compass": {
+      "name": "Mi Compass",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Compass app"
+    },
+    "com.miui.weather2": {
+      "name": "Mi Weather",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Weather app"
+    },
+    "com.miui.yellowpage": {
+      "name": "Mi YellowPages",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Business directory"
+    },
+    "com.miui.bugreport": {
+      "name": "MIUI Bug Report",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Bug reporting"
+    },
+    "com.miui.gallery": {
+      "name": "MIUI Gallery",
+      "category": "Caution",
+      "risk": "caution",
+      "desc": "Photo gallery — remove only if using Google Photos"
+    },
+    "com.miui.cleanmaster": {
+      "name": "Cleaner",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Storage cleaner with ads"
+    },
+    "com.miui.micloudsync": {
+      "name": "Mi Cloud Sync",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Cloud sync service"
+    },
+    "com.xiaomi.glgm": {
+      "name": "Xiaomi Games",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Game center"
+    },
+    "com.xiaomi.midrop": {
+      "name": "ShareMe/Mi Drop",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "File sharing"
+    },
+    "com.xiaomi.mipicks": {
+      "name": "GetApps",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Xiaomi app store"
+    },
+    "com.xiaomi.payment": {
+      "name": "Mi Pay",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Payment service"
+    }
+  },
+  "oneplus": {
+    "com.oneplus.gamespace": {
+      "name": "Game Space",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Gaming mode"
+    },
+    "com.oneplus.brickmode": {
+      "name": "Zen Mode",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Focus mode"
+    },
+    "com.oneplus.store": {
+      "name": "OnePlus Store",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "OnePlus shop"
+    },
+    "com.oneplus.membership": {
+      "name": "Red Cable Club",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Membership app"
+    },
+    "com.oneplus.weather": {
+      "name": "OnePlus Weather",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Weather app"
+    },
+    "com.oneplus.soundrecorder": {
+      "name": "Recorder",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Voice recorder"
+    },
+    "com.oplus.games": {
+      "name": "Oplus Games",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Game center"
+    },
+    "com.heytap.browser": {
+      "name": "HeyTap Browser",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Built-in browser"
+    },
+    "com.heytap.music": {
+      "name": "HeyTap Music",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Music player"
+    },
+    "com.heytap.market": {
+      "name": "HeyTap App Market",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "App store"
+    },
+    "com.heytap.cloud": {
+      "name": "HeyTap Cloud",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Cloud storage"
+    },
+    "com.oplus.sos": {
+      "name": "SOS Emergency",
+      "category": "Caution",
+      "risk": "caution",
+      "desc": "Emergency SOS"
+    },
+    "net.oneplus.commonlogtool": {
+      "name": "Log Tool",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Diagnostic logging"
+    },
+    "com.oneplus.opbugreportlite": {
+      "name": "Bug Report",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Bug reporting"
+    }
+  },
+  "realme": {
+    "com.realme.wellbeing": {
+      "name": "Realme Wellbeing",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Digital wellbeing"
+    },
+    "com.coloros.gamespaceui": {
+      "name": "Game Space",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Gaming mode"
+    },
+    "com.coloros.weather2": {
+      "name": "Weather",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Weather app"
+    },
+    "com.coloros.compass2": {
+      "name": "Compass",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Compass"
+    },
+    "com.coloros.oshare": {
+      "name": "OPPO Share",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "File sharing"
+    },
+    "com.coloros.browser": {
+      "name": "ColorOS Browser",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Built-in browser"
+    },
+    "com.heytap.browser": {
+      "name": "HeyTap Browser",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Built-in browser"
+    },
+    "com.heytap.cloud": {
+      "name": "Cloud Service",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Cloud storage"
+    },
+    "com.heytap.market": {
+      "name": "App Market",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "App store"
+    },
+    "com.finshell.wallet": {
+      "name": "Wallet",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Payment wallet"
+    }
+  },
+  "oppo": {
+    "com.oppo.music": {
+      "name": "OPPO Music",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Music player"
+    },
+    "com.oppo.camera": {
+      "name": "OPPO Camera",
+      "category": "System",
+      "risk": "dangerous",
+      "desc": "Camera app"
+    },
+    "com.coloros.gamespaceui": {
+      "name": "Game Space",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Gaming mode"
+    },
+    "com.coloros.browser": {
+      "name": "ColorOS Browser",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Built-in browser"
+    },
+    "com.coloros.weather2": {
+      "name": "Weather",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Weather app"
+    },
+    "com.heytap.browser": {
+      "name": "HeyTap Browser",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Built-in browser"
+    },
+    "com.heytap.market": {
+      "name": "App Market",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "App store"
+    },
+    "com.heytap.cloud": {
+      "name": "Cloud Service",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Cloud storage"
+    }
+  },
+  "pixel": {
+    "com.google.android.apps.wellbeing": {
+      "name": "Digital Wellbeing",
+      "category": "Google",
+      "risk": "safe",
+      "desc": "Screen time"
+    },
+    "com.google.android.apps.safetyhub": {
+      "name": "Safety Hub",
+      "category": "Google",
+      "risk": "safe",
+      "desc": "Personal safety"
+    },
+    "com.google.android.apps.tips": {
+      "name": "Pixel Tips",
+      "category": "Google",
+      "risk": "safe",
+      "desc": "Tips app"
+    },
+    "com.google.android.markup": {
+      "name": "Markup",
+      "category": "Google",
+      "risk": "safe",
+      "desc": "Screenshot editor"
+    },
+    "com.google.android.apps.recorder": {
+      "name": "Pixel Recorder",
+      "category": "Google",
+      "risk": "safe",
+      "desc": "Voice recorder"
+    },
+    "com.google.android.apps.dreamliner": {
+      "name": "Dreamliner",
+      "category": "Google",
+      "risk": "safe",
+      "desc": "Pixel Stand features"
+    }
+  },
+  "vivo": {
+    "com.vivo.browser": {
+      "name": "Vivo Browser",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Built-in browser"
+    },
+    "com.vivo.weather": {
+      "name": "Vivo Weather",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Weather app"
+    },
+    "com.vivo.appstore": {
+      "name": "V-Appstore",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "App store"
+    },
+    "com.vivo.game": {
+      "name": "Game Center",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Gaming hub"
+    },
+    "com.vivo.easyshare": {
+      "name": "EasyShare",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "File sharing"
+    },
+    "com.vivo.wallet": {
+      "name": "Vivo Wallet",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Payment wallet"
+    },
+    "com.vivo.compass": {
+      "name": "Compass",
+      "category": "Bloatware",
+      "risk": "safe",
+      "desc": "Compass app"
+    }
+  }
+}

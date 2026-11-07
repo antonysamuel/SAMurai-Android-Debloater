@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMurai</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="sidebar" role="navigation" aria-label="Main">
+        <div class="sidebar-brand">
+            <span class="brand-icon">&#9876;</span>
+            <span class="brand-text">SAMurai</span>
+        </div>
+        <div class="sidebar-nav">
+            <button class="nav-item active" data-view="dashboard" onclick="showView('dashboard')">
+                <span class="nav-icon">&#9632;</span> Dashboard
+            </button>
+            <button class="nav-item" data-view="apps" onclick="showView('apps')">
+                <span class="nav-icon">&#9783;</span> Apps
+            </button>
+            <button class="nav-item" data-view="presets" onclick="showView('presets')">
+                <span class="nav-icon">&#9733;</span> Presets
+            </button>
+            <button class="nav-item" data-view="permissions" onclick="showView('permissions')">
+                <span class="nav-icon">&#9881;</span> Permissions
+            </button>
+            <button class="nav-item" data-view="processes" onclick="showView('processes')">
+                <span class="nav-icon">&#9654;</span> Processes
+            </button>
+            <button class="nav-item" data-view="security" onclick="showView('security')">
+                <span class="nav-icon">&#9888;</span> Security
+            </button>
+            <button class="nav-item" data-view="settings" onclick="showView('settings')">
+                <span class="nav-icon">&#8943;</span> Settings
+            </button>
+            <button class="nav-item" data-view="database" onclick="showView('database')">
+                <span class="nav-icon">&#9776;</span> Database
+            </button>
+            <button class="nav-item" data-view="optimize" onclick="showView('optimize')">
+                <span class="nav-icon">&#9889;</span> Optimize
+            </button>
+            <button class="nav-item" onclick="openWirelessGuide()" title="Wireless ADB connection tutorial & demo">
+                <span class="nav-icon">&#128241;</span> Connect Guide
+            </button>
+            <div class="nav-separator"></div>
+            <button class="nav-item" data-view="ai-chat" onclick="showView('ai-chat')">
+                <span class="nav-icon">&#9883;</span> AI Chat
+            </button>
+            <button class="nav-item" data-view="ai-recommend" onclick="showView('ai-recommend')">
+                <span class="nav-icon">&#10024;</span> AI Cleanup
+            </button>
+            <button class="nav-item" data-view="ai-settings" onclick="showView('ai-settings')">
+                <span class="nav-icon">&#9881;</span> AI Settings
+            </button>
+        </div>
+        <div class="sidebar-footer">
+            <div class="device-indicator" id="sidebar-device">
+                <span class="device-dot offline"></span>
+                <span class="device-label">No device</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content">
+        <!-- Dashboard -->
+        <section class="view active" id="view-dashboard">
+            <h1 class="view-title">Dashboard</h1>
+
+            <div class="guide-banner" onclick="openWirelessGuide()" role="button" tabindex="0">
+                <div class="guide-banner-left">
+                    <div class="guide-banner-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="5" y="2" width="14" height="20" rx="3"/>
+                            <path d="M12 18h.01"/>
+                            <path d="M9 7.5a4.5 4.5 0 0 1 6 0"/>
+                            <path d="M10.5 9.5a2 2 0 0 1 3 0"/>
+                        </svg>
+                    </div>
+                    <div class="guide-banner-content">
+                        <div class="guide-banner-header">
+                            <span class="guide-banner-title">Wireless ADB Setup &amp; Pairing Assistant</span>
+                            <span class="guide-badge-compat">
+                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                                One UI 6+ Compatible
+                            </span>
+                            <span class="guide-badge-steps">5-Step Walkthrough</span>
+                        </div>
+                        <div class="guide-banner-subtitle">
+                            Interactive visual walkthrough for developer options, dual-port pairing, and One UI 6+ security permissions.
+                        </div>
+                    </div>
+                </div>
+                <div class="guide-banner-right">
+                    <button class="btn-guide-launch" onclick="event.stopPropagation(); openWirelessGuide()">
+                        <span>Launch Tutorial</span>
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="connect-group">
+                <div class="connect-box">
+                    <div class="connect-box-header">
+                        <h2>Pair device</h2>
+                        <button class="btn-link" onclick="openWirelessGuide(4)" title="View pairing code and port guide">How to pair? &#8599;</button>
+                    </div>
+                    <p class="hint">Open Wireless Debugging on your phone, tap "Pair device with pairing code", and enter the details below.</p>
+                    <div class="field-row">
+                        <input type="text" id="pair-ip" placeholder="IP address" value="192.168.0.">
+                        <input type="text" id="pair-port" placeholder="Pairing port" class="narrow">
+                        <input type="text" id="pair-code" placeholder="Code" class="narrow">
+                        <button class="btn" onclick="pairDevice()">Pair</button>
+                    </div>
+                </div>
+                <div class="connect-box">
+                    <div class="connect-box-header">
+                        <h2>Connect</h2>
+                        <button class="btn-link" onclick="openWirelessGuide(4)" title="Where to find the connection port">Where is port? &#8599;</button>
+                    </div>
+                    <p class="hint">Use the IP and port shown under Wireless Debugging (not the pairing port).</p>
+                    <div class="field-row">
+                        <input type="text" id="conn-ip" placeholder="IP address" value="192.168.0.">
+                        <input type="text" id="conn-port" placeholder="Port" class="narrow">
+                        <button class="btn" onclick="connectDevice()">Connect</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="connect-troubleshoot" class="connect-troubleshoot hidden"></div>
+
+            <div class="section-header">
+                <h2>Connected devices</h2>
+                <button class="btn btn-ghost" onclick="refreshDevices()">Refresh</button>
+            </div>
+            <div id="devices-list" class="devices-grid"></div>
+
+            <div id="quick-stats" class="quick-stats hidden">
+                <div class="qs-card">
+                    <span class="qs-value" id="qs-battery">—</span>
+                    <span class="qs-label">Battery</span>
+                </div>
+                <div class="qs-card">
+                    <span class="qs-value" id="qs-temp">—</span>
+                    <span class="qs-label">Temperature</span>
+                </div>
+                <div class="qs-card">
+                    <span class="qs-value" id="qs-health">—</span>
+                    <span class="qs-label">Health (ASOC)</span>
+                </div>
+                <div class="qs-card">
+                    <span class="qs-value" id="qs-packages">—</span>
+                    <span class="qs-label">Packages</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Apps -->
+        <section class="view" id="view-apps">
+            <h1 class="view-title">Apps</h1>
+            <div class="sub-tabs">
+                <button class="sub-tab active" onclick="switchAppTab('installed')">Installed</button>
+                <button class="sub-tab" onclick="switchAppTab('removed')">Removed</button>
+            </div>
+
+            <div id="apps-installed-tab">
+                <div class="toolbar">
+                    <input type="text" id="search-apps" placeholder="Search by name or package id…" oninput="filterPackages()" class="search-input">
+                    <select id="filter-cat" onchange="filterPackages()"><option value="all">All categories</option></select>
+                    <select id="filter-risk" onchange="filterPackages()">
+                        <option value="all">All risk levels</option>
+                        <option value="safe">Safe</option>
+                        <option value="caution">Caution</option>
+                        <option value="unknown">Unknown</option>
+                        <option value="dangerous">System</option>
+                    </select>
+                </div>
+                <div class="batch-bar">
+                    <button class="btn btn-ghost btn-sm" onclick="selectAllVisible()">Select visible</button>
+                    <button class="btn btn-ghost btn-sm" onclick="deselectAll()">Clear selection</button>
+                    <button class="btn btn-danger btn-sm" id="btn-batch" onclick="batchRemove()" disabled>Remove selected (0)</button>
+                </div>
+                <div class="stats-row" id="stats-row"></div>
+                <div id="packages-list" class="pkg-list"></div>
+            </div>
+
+            <div id="apps-removed-tab" class="hidden">
+                <div id="removed-list" class="pkg-list"></div>
+            </div>
+        </section>
+
+        <!-- Presets -->
+        <section class="view" id="view-presets">
+            <h1 class="view-title">Presets</h1>
+            <p class="view-desc">One-click debloat profiles. Each preset removes a different set of packages — preview before applying.</p>
+            <div class="preset-grid">
+                <div class="preset-card">
+                    <h2>Minimal cleanup</h2>
+                    <p>Remove only the obvious bloat: Bixby, extra fonts, novelty watch faces. Nothing that could affect features.</p>
+                    <div class="preset-meta"><span class="risk-dot safe"></span> Safe packages only</div>
+                    <div class="preset-actions">
+                        <button class="btn btn-ghost btn-sm" onclick="previewPreset('minimal')">Preview</button>
+                        <button class="btn btn-sm" onclick="applyPreset('minimal')">Apply</button>
+                    </div>
+                </div>
+                <div class="preset-card featured">
+                    <h2>iPhone efficiency</h2>
+                    <p>Remove all safe bloatware and restrict background activity for heavy apps. The best balance of clean and functional.</p>
+                    <div class="preset-meta"><span class="risk-dot safe"></span> Safe + background restrictions</div>
+                    <div class="preset-actions">
+                        <button class="btn btn-ghost btn-sm" onclick="previewPreset('iphone-efficiency')">Preview</button>
+                        <button class="btn btn-sm" onclick="applyPreset('iphone-efficiency')">Apply</button>
+                    </div>
+                </div>
+                <div class="preset-card">
+                    <h2>Aggressive</h2>
+                    <p>Remove safe and caution-level packages. Some features may stop working — review the list before applying.</p>
+                    <div class="preset-meta"><span class="risk-dot caution"></span> Safe + caution packages</div>
+                    <div class="preset-actions">
+                        <button class="btn btn-ghost btn-sm" onclick="previewPreset('aggressive')">Preview</button>
+                        <button class="btn btn-sm btn-danger" onclick="applyPreset('aggressive')">Apply</button>
+                    </div>
+                </div>
+            </div>
+            <div id="preset-preview" class="hidden">
+                <div class="section-header">
+                    <h2 id="preset-preview-title">Preview</h2>
+                    <button class="btn btn-ghost btn-sm" onclick="hidePresetPreview()">Close</button>
+                </div>
+                <div id="preset-preview-list" class="pkg-list"></div>
+            </div>
+        </section>
+
+        <!-- Permissions -->
+        <section class="view" id="view-permissions">
+            <h1 class="view-title">Permissions</h1>
+            <p class="view-desc">Type a package name to inspect its runtime permissions, or click "Perms" on any app in the Apps view.</p>
+            <div class="toolbar">
+                <input type="text" id="search-perms" placeholder="Enter package name, e.g. com.truecaller…" oninput="filterPermissions()" class="search-input">
+                <button class="btn btn-sm" onclick="loadPermissionsForPkg()">Load permissions</button>
+                <button class="btn btn-ghost btn-sm" onclick="loadNotifications()">Notification permissions</button>
+            </div>
+            <div id="permissions-list" class="pkg-list"></div>
+            <div id="notifications-section" class="hidden">
+                <div class="section-header"><h2>Notification permissions</h2></div>
+                <div id="notifications-list" class="pkg-list"></div>
+                <button class="btn btn-danger btn-sm" id="btn-revoke-notifs" onclick="bulkRevokeNotifications()" disabled>Revoke selected notifications</button>
+            </div>
+        </section>
+
+        <!-- Processes -->
+        <section class="view" id="view-processes">
+            <h1 class="view-title">Processes</h1>
+            <div class="toolbar">
+                <p class="view-desc" style="margin:0">Apps currently running in memory.</p>
+                <button class="btn btn-sm" onclick="loadProcesses()">Refresh</button>
+            </div>
+            <div id="processes-list" class="pkg-list"></div>
+        </section>
+
+        <!-- Security -->
+        <section class="view" id="view-security">
+            <h1 class="view-title">Security scan</h1>
+            <div class="toolbar">
+                <p class="view-desc" style="margin:0">Check for suspicious apps, permissions, and device admin abuse.</p>
+                <button class="btn btn-sm" onclick="runSecurityScan()">Run scan</button>
+            </div>
+            <div id="security-results"></div>
+        </section>
+
+        <!-- Settings -->
+        <section class="view" id="view-settings">
+            <h1 class="view-title">Settings</h1>
+
+            <div class="settings-group">
+                <h2>Default apps</h2>
+                <div id="defaults-list" class="settings-rows"></div>
+                <button class="btn btn-ghost btn-sm" onclick="loadDefaults()">Refresh defaults</button>
+            </div>
+
+            <div class="settings-group">
+                <h2>Private DNS</h2>
+                <p class="hint">Block ads and trackers system-wide with a DNS provider.</p>
+                <div class="field-row">
+                    <input type="text" id="dns-host" placeholder="e.g. family.freedns.controld.com" class="search-input">
+                    <button class="btn btn-sm" onclick="setDns()">Apply</button>
+                    <button class="btn btn-ghost btn-sm" onclick="loadDns()">Current</button>
+                </div>
+            </div>
+
+            <div class="settings-group">
+                <h2>Knox and warranty</h2>
+                <div id="knox-info" class="info-grid"></div>
+                <button class="btn btn-ghost btn-sm" onclick="loadKnox()">Check status</button>
+            </div>
+
+            <div class="settings-group">
+                <h2>Charging</h2>
+                <div id="charge-info" class="info-grid"></div>
+                <button class="btn btn-ghost btn-sm" onclick="loadCharge()">Check status</button>
+            </div>
+
+            <div class="settings-group">
+                <h2>Device profile</h2>
+                <p class="hint">Export the current package state so you can re-apply it after a factory reset or on another device.</p>
+                <div class="field-row">
+                    <button class="btn btn-sm" onclick="exportProfile()">Export profile</button>
+                    <button class="btn btn-ghost btn-sm" onclick="importProfile()">Import profile</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Optimize -->
+        <section class="view" id="view-optimize">
+            <h1 class="view-title">Optimize</h1>
+            <p class="view-desc">Apply system-level tweaks for better battery life and performance.</p>
+
+            <div class="opt-grid">
+                <div class="opt-card">
+                    <h2>Animations</h2>
+                    <p>Reduce window, transition, and animator scales to 0.5× for a snappier feel.</p>
+                    <button class="btn btn-sm" onclick="applyOptimize()">Reduce animations</button>
+                </div>
+                <div class="opt-card">
+                    <h2>Background scanning</h2>
+                    <p>Disable always-on WiFi and Bluetooth scanning. Saves battery without affecting normal connectivity.</p>
+                    <button class="btn btn-sm" onclick="applyOptimize()">Disable scanning</button>
+                </div>
+                <div class="opt-card">
+                    <h2>Storage maintenance</h2>
+                    <p>Run TRIM on flash storage to reclaim deleted blocks and keep writes fast.</p>
+                    <button class="btn btn-sm" onclick="applyOptimize()">Run TRIM</button>
+                </div>
+                <div class="opt-card">
+                    <h2>Full optimization</h2>
+                    <p>Apply all of the above in one step.</p>
+                    <button class="btn" onclick="applyOptimize()">Optimize everything</button>
+                </div>
+            </div>
+
+            <div class="section-header" style="margin-top:2rem">
+                <h2>Background restrictions</h2>
+            </div>
+            <p class="hint">Select an app to restrict its background activity and set it to the restricted standby bucket.</p>
+            <div class="field-row" style="margin-top:.75rem">
+                <input type="text" id="restrict-pkg" placeholder="Package name, e.g. com.flipkart.android" class="search-input">
+                <button class="btn btn-sm" onclick="restrictBackground()">Restrict</button>
+            </div>
+            <div class="section-header" style="margin-top:2rem">
+                <h2>Device</h2>
+            </div>
+            <button class="btn btn-danger btn-sm" onclick="rebootDevice()">Reboot device</button>
+        </section>
+
+        <!-- Database Editor -->
+        <section class="view" id="view-database">
+            <h1 class="view-title">Package Database</h1>
+            <p class="view-desc">Edit the package classification database. UAD (Universal Android Debloater) list provides 5,000+ known packages. Custom entries override UAD.</p>
+
+            <div class="uad-banner" id="uad-banner"></div>
+
+            <div class="toolbar">
+                <select id="db-target" onchange="loadDatabase()">
+                    <option value="packages">Custom packages</option>
+                    <option value="brands">Brand-specific</option>
+                    <option value="presets">Presets</option>
+                </select>
+                <select id="db-brand" class="hidden" onchange="loadDatabase()">
+                    <option value="">Select brand...</option>
+                    <option value="xiaomi">Xiaomi</option>
+                    <option value="oneplus">OnePlus</option>
+                    <option value="realme">Realme</option>
+                    <option value="oppo">OPPO</option>
+                    <option value="pixel">Pixel</option>
+                    <option value="vivo">Vivo</option>
+                </select>
+                <input type="text" id="db-search" placeholder="Search packages..." oninput="filterDatabase()" class="search-input">
+                <button class="btn btn-sm" onclick="syncUadList()">Sync UAD list</button>
+                <button class="btn btn-ghost btn-sm" onclick="reloadDatabases()">Reload from disk</button>
+            </div>
+
+            <div class="db-stats" id="db-stats"></div>
+            <div id="db-list" class="pkg-list"></div>
+
+            <div class="settings-group" style="margin-top:1.5rem">
+                <h2>Add / edit entry</h2>
+                <div class="field-row">
+                    <input type="text" id="db-pkg-id" placeholder="Package ID (com.example.app)" class="search-input">
+                    <input type="text" id="db-pkg-name" placeholder="Display name" class="search-input" style="max-width:160px">
+                </div>
+                <div class="field-row" style="margin-top:.5rem">
+                    <input type="text" id="db-pkg-cat" placeholder="Category" class="search-input" style="max-width:140px">
+                    <select id="db-pkg-risk">
+                        <option value="safe">Safe</option>
+                        <option value="caution">Caution</option>
+                        <option value="dangerous">Dangerous</option>
+                    </select>
+                    <input type="text" id="db-pkg-desc" placeholder="Description" class="search-input">
+                    <button class="btn btn-sm" onclick="addDbEntry()">Save</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Chat -->
+        <section class="view" id="view-ai-chat">
+            <h1 class="view-title">AI Chat</h1>
+            <p class="view-desc">Ask the AI about your device, optimization strategies, or package safety.</p>
+            <div class="chat-container">
+                <div class="chat-messages" id="chat-messages">
+                    <div class="chat-msg assistant">
+                        <div class="chat-bubble">Hello! I'm your device optimization assistant. Connect a device and ask me anything about debloating, battery optimization, or app safety.</div>
+                    </div>
+                </div>
+                <div class="chat-input-row">
+                    <input type="text" id="chat-input" placeholder="Ask about packages, optimization, battery..." class="search-input" onkeydown="if(event.key==='Enter')sendChatMessage()">
+                    <button class="btn" onclick="sendChatMessage()">Send</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Smart Cleanup -->
+        <section class="view" id="view-ai-recommend">
+            <h1 class="view-title">AI Smart Cleanup</h1>
+            <p class="view-desc">AI reads your installed packages, compares against UAD and our databases, and builds a tailored cleanup plan.</p>
+            <div class="toolbar">
+                <input type="text" id="ai-goal" placeholder="Goal: battery life, privacy, minimal, performance..." class="search-input" value="balanced optimization">
+                <button class="btn" onclick="aiSmartCleanup()">Analyze &amp; Plan</button>
+            </div>
+            <div id="ai-cleanup-status" style="margin-top:.5rem"></div>
+            <div id="ai-cleanup-result" style="margin-top:.75rem"></div>
+        </section>
+
+        <!-- AI Settings -->
+        <section class="view" id="view-ai-settings">
+            <h1 class="view-title">AI Settings</h1>
+            <p class="view-desc">Configure your AI provider and API key. Any OpenAI-compatible API works.</p>
+            <div class="settings-group">
+                <h2>Provider</h2>
+                <div class="field-row">
+                    <select id="ai-provider" onchange="onAiProviderChange()">
+                        <option value="">Select provider...</option>
+                        <option value="nvidia">NVIDIA Nemotron</option>
+                        <option value="gemini">Google Gemini</option>
+                        <option value="openai">OpenAI</option>
+                        <option value="openrouter">OpenRouter</option>
+                        <option value="groq">Groq</option>
+                        <option value="ollama">Ollama (Local)</option>
+                        <option value="custom">Custom OpenAI-Compatible</option>
+                    </select>
+                </div>
+            </div>
+            <div class="settings-group">
+                <h2>API Key</h2>
+                <p class="hint" id="ai-key-hint">Required for cloud providers. Leave blank for Ollama or keyless endpoints.</p>
+                <div class="field-row">
+                    <input type="password" id="ai-apikey" placeholder="Enter your API key" class="search-input">
+                    <button class="btn btn-sm" onclick="toggleKeyVisibility()">Show</button>
+                </div>
+            </div>
+            <div class="settings-group">
+                <h2>Base URL</h2>
+                <p class="hint" id="ai-url-hint">Pre-filled for built-in providers. Override or set for custom endpoints.</p>
+                <div class="field-row">
+                    <input type="text" id="ai-baseurl" placeholder="https://api.example.com/v1" class="search-input">
+                </div>
+            </div>
+            <div class="settings-group">
+                <h2>Model</h2>
+                <div class="field-row">
+                    <input type="text" id="ai-model" placeholder="Leave blank for default model" class="search-input">
+                    <button class="btn btn-ghost btn-sm" onclick="fetchAvailableModels()">Fetch models</button>
+                </div>
+                <p class="hint" id="ai-model-hint">Default model will be used if left empty.</p>
+                <div id="ai-models-list" class="hidden" style="margin-top:.5rem"></div>
+            </div>
+            <div class="field-row" style="margin-top:1rem">
+                <button class="btn" onclick="saveAiSettings()">Save AI configuration</button>
+                <button class="btn btn-ghost" onclick="testAiConnection()">Test connection</button>
+            </div>
+            <div id="ai-settings-status"></div>
+        </section>
+
+        <!-- Activity log console drawer -->
+        <div class="log-drawer" id="log-drawer">
+            <div class="log-header-bar">
+                <button class="log-toggle" onclick="toggleLog()" aria-label="Toggle activity log" id="log-toggle-btn">
+                    <span class="log-chevron" id="log-chevron">&#9656;</span>
+                    <span class="log-live-dot" title="Live logger active"></span>
+                    <span class="log-title">Activity Console</span>
+                    <span id="log-count" class="log-badge hidden">0</span>
+                    <span class="log-stat-summary" id="log-stat-summary">0 events</span>
+                </button>
+
+                <div class="log-toolbar" id="log-toolbar">
+                    <div class="log-filter-chips">
+                        <button class="log-chip active" data-filter="all" onclick="filterLogs('all')">All <span class="chip-count" id="chip-all-count">0</span></button>
+                        <button class="log-chip chip-error" data-filter="error" onclick="filterLogs('error')">Errors <span class="chip-count" id="chip-error-count">0</span></button>
+                        <button class="log-chip chip-warn" data-filter="warn" onclick="filterLogs('warn')">Warnings <span class="chip-count" id="chip-warn-count">0</span></button>
+                        <button class="log-chip chip-adb" data-filter="adb" onclick="filterLogs('adb')">ADB <span class="chip-count" id="chip-adb-count">0</span></button>
+                        <button class="log-chip chip-ai" data-filter="ai" onclick="filterLogs('ai')">AI <span class="chip-count" id="chip-ai-count">0</span></button>
+                    </div>
+
+                    <div class="log-search-wrap">
+                        <input type="text" id="log-search-input" placeholder="Filter console..." oninput="onLogSearchInput(this.value)">
+                        <button class="log-search-clear hidden" id="log-search-clear" onclick="clearLogSearch()">&times;</button>
+                    </div>
+
+                    <div class="log-actions">
+                        <button class="btn-log-action" onclick="copyAllLogs()" title="Copy logs to clipboard">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            <span>Copy</span>
+                        </button>
+                        <button class="btn-log-action" onclick="exportLogs()" title="Export logs as file">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            <span>Export</span>
+                        </button>
+                        <button class="btn-log-action" onclick="toggleLogSort()" id="log-sort-btn" title="Toggle sort order (Newest first vs Oldest first)">
+                            <span>&#8595; Newest</span>
+                        </button>
+                        <button class="btn-log-action" onclick="toggleLogHeight()" title="Expand / Maximize Console" id="log-height-btn">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                        </button>
+                        <button class="btn-log-action btn-log-clear" onclick="clearLogs()" title="Clear activity log">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="log-body hidden" id="log-body">
+                <div class="log-entries-wrap" id="log-entries-wrap">
+                    <div id="log" class="log-entries"></div>
+                </div>
+                <div class="log-footer-status">
+                    <span id="log-filter-status">Showing all entries</span>
+                    <label class="log-autoscroll-label">
+                        <input type="checkbox" id="log-autoscroll" checked onchange="toggleAutoScroll(this.checked)"> Auto-scroll
+                    </label>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Wireless Debugging Interactive Guide & Demo Modal -->
+    <div id="wireless-guide-modal" class="guide-modal-backdrop" onclick="onGuideBackdropClick(event)">
+        <div class="guide-modal-window" role="dialog" aria-modal="true" aria-labelledby="guide-modal-title">
+            <!-- Modal Header -->
+            <div class="guide-header">
+                <div class="guide-header-text">
+                    <div class="guide-pill-tag">
+                        <span class="guide-pill-dot"></span>
+                        INTERACTIVE SETUP &amp; DEMO
+                    </div>
+                    <h2 id="guide-modal-title">Wireless ADB Connection Guide</h2>
+                    <p class="guide-subtitle">Step-by-step interactive simulator for unlocking Developer Options, disabling Samsung Auto Blocker, and pairing.</p>
+                </div>
+                <div class="guide-header-actions">
+                    <div class="guide-brand-tabs">
+                        <button class="guide-brand-tab active" data-brand="samsung" onclick="setGuideBrand('samsung')" title="Samsung Galaxy One UI setup (Includes Auto Blocker guide)">
+                            <span class="brand-tab-icon">📱</span> Samsung (One UI)
+                        </button>
+                        <button class="guide-brand-tab" data-brand="pixel" onclick="setGuideBrand('pixel')" title="Google Pixel &amp; Stock Android">
+                            <span class="brand-tab-icon">🤖</span> Pixel / Stock
+                        </button>
+                        <button class="guide-brand-tab" data-brand="xiaomi" onclick="setGuideBrand('xiaomi')" title="Xiaomi, Redmi, POCO (HyperOS / MIUI)">
+                            <span class="brand-tab-icon">⚡</span> Xiaomi (HyperOS)
+                        </button>
+                        <button class="guide-brand-tab" data-brand="oneplus" onclick="setGuideBrand('oneplus')" title="OnePlus, OPPO, Realme (ColorOS / OxygenOS)">
+                            <span class="brand-tab-icon">🔴</span> OnePlus / OPPO
+                        </button>
+                    </div>
+                    <button class="guide-close-btn" onclick="closeWirelessGuide()" aria-label="Close guide">&times;</button>
+                </div>
+            </div>
+
+            <!-- Stepper Navigation -->
+            <div class="guide-stepper">
+                <button class="step-btn active" data-step="1" onclick="setGuideStep(1)">
+                    <span class="step-num">1</span>
+                    <span class="step-label">Developer Options</span>
+                </button>
+                <div class="step-line"></div>
+                <button class="step-btn step-autoblocker" data-step="2" onclick="setGuideStep(2)">
+                    <span class="step-num">2</span>
+                    <span class="step-label">
+                        Auto Blocker
+                        <span class="step-badge-alert" id="step2-badge">Crucial</span>
+                    </span>
+                </button>
+                <div class="step-line"></div>
+                <button class="step-btn" data-step="3" onclick="setGuideStep(3)">
+                    <span class="step-num">3</span>
+                    <span class="step-label">Wireless Debugging</span>
+                </button>
+                <div class="step-line"></div>
+                <button class="step-btn" data-step="4" onclick="setGuideStep(4)">
+                    <span class="step-num">4</span>
+                    <span class="step-label">Pair Code vs Port</span>
+                </button>
+                <div class="step-line"></div>
+                <button class="step-btn" data-step="5" onclick="setGuideStep(5)">
+                    <span class="step-num">5</span>
+                    <span class="step-label">Connect &amp; Ready</span>
+                </button>
+            </div>
+
+            <!-- Modal Body (Two-column layout: Phone simulator on left, instructions on right) -->
+            <div class="guide-body">
+                <!-- Phone Simulator Frame -->
+                <div class="guide-phone-col">
+                    <div class="guide-phone-container">
+                        <div class="guide-phone-frame">
+                            <div class="phone-camera-punch"></div>
+                            <div class="phone-speaker-slit"></div>
+                            <div class="phone-screen" id="phone-screen">
+                                <!-- Status Bar -->
+                                <div class="phone-status-bar">
+                                    <span class="ps-time">10:00</span>
+                                    <div class="ps-icons">
+                                        <svg class="ps-wifi" width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 4c-4.2 0-8 1.7-10.8 4.5l10.8 13.5 10.8-13.5C20 5.7 16.2 4 12 4z"/>
+                                        </svg>
+                                        <span class="ps-battery">
+                                            <span class="ps-battery-fill"></span>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- Dynamic Screen Views Rendered via JS -->
+                                <div id="phone-screen-content" class="phone-screen-content">
+                                    <!-- Populated dynamically by setGuideStep() -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phone Shadow / Stand -->
+                        <div class="phone-stand-glow"></div>
+                    </div>
+                </div>
+
+                <!-- Step Instruction Column -->
+                <div class="guide-info-col">
+                    <div id="guide-step-content" class="guide-step-content">
+                        <!-- Populated dynamically by setGuideStep() -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Footer / Controls -->
+            <div class="guide-footer">
+                <div class="guide-footer-left">
+                    <button class="btn btn-ghost" id="guide-prev-btn" onclick="prevGuideStep()">
+                        &#8592; Previous
+                    </button>
+                    <button class="btn btn-demo-play" id="guide-autoplay-btn" onclick="toggleGuideDemo()" title="Automatically play through the tutorial steps">
+                        <span id="demo-play-icon">&#9654;</span>
+                        <span id="demo-play-text">Play Demo</span>
+                    </button>
+                </div>
+
+                <div class="guide-playback-bar" title="Demo auto-play progress">
+                    <div class="guide-progress-fill" id="guide-progress-fill"></div>
+                </div>
+
+                <div class="guide-footer-right">
+                    <button class="btn btn-primary" id="guide-next-btn" onclick="nextGuideStep()">
+                        Next Step &#8594;
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

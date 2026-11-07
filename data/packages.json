@@ -1,0 +1,1196 @@
+{
+  "com.samsung.android.bixby.agent": {
+    "name": "Bixby Voice",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Samsung voice assistant"
+  },
+  "com.samsung.android.bixby.wakeup": {
+    "name": "Bixby Wakeup",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Bixby wake word detection"
+  },
+  "com.samsung.android.bixby.service": {
+    "name": "Bixby Service",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Bixby background service"
+  },
+  "com.samsung.android.visionintelligence": {
+    "name": "Bixby Vision",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Camera-based search"
+  },
+  "com.samsung.android.bixby.dictation": {
+    "name": "Bixby Dictation",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Bixby speech-to-text"
+  },
+  "com.samsung.android.samsungpass": {
+    "name": "Samsung Pass",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Samsung password manager"
+  },
+  "com.samsung.android.samsungpassautofill": {
+    "name": "Samsung Pass Autofill",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Samsung autofill service"
+  },
+  "com.samsung.android.authfw": {
+    "name": "Samsung Auth Framework",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Samsung authentication"
+  },
+  "com.samsung.android.spay": {
+    "name": "Samsung Pay",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Samsung payment service"
+  },
+  "com.samsung.android.samsungpay.gear": {
+    "name": "Samsung Pay Watch",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Samsung Pay for watch"
+  },
+  "com.samsung.android.mateagent": {
+    "name": "Samsung Free",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "News/games feed"
+  },
+  "com.samsung.android.app.spage": {
+    "name": "Samsung Free Page",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Left home screen panel"
+  },
+  "com.samsung.android.game.gamehome": {
+    "name": "Game Launcher",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Game management hub"
+  },
+  "com.samsung.android.game.gametools": {
+    "name": "Game Tools",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "In-game overlay tools"
+  },
+  "com.samsung.android.app.tips": {
+    "name": "Samsung Tips",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Tips and tutorials"
+  },
+  "com.samsung.android.voc": {
+    "name": "Samsung Members",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Community & support app"
+  },
+  "com.samsung.android.ardrawing": {
+    "name": "AR Doodle",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "AR drawing feature"
+  },
+  "com.samsung.android.aremoji": {
+    "name": "AR Emoji",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Animated emoji creator"
+  },
+  "com.samsung.android.arzone": {
+    "name": "AR Zone",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "AR features hub"
+  },
+  "com.samsung.android.stickercenter": {
+    "name": "Sticker Center",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Sticker downloads"
+  },
+  "com.samsung.android.scloud": {
+    "name": "Samsung Cloud",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Samsung cloud sync"
+  },
+  "com.samsung.android.kidsinstaller": {
+    "name": "Kids Mode",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Kids mode installer"
+  },
+  "com.samsung.android.app.Camera.auto": {
+    "name": "Camera Auto",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Extra camera modes"
+  },
+  "com.samsung.android.app.sharelive": {
+    "name": "Share Live",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Live video sharing"
+  },
+  "com.samsung.android.mcfserver": {
+    "name": "MCF Server",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Multi-device connection"
+  },
+  "com.samsung.android.easysetup": {
+    "name": "Easy Setup",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Device setup wizard"
+  },
+  "com.samsung.android.smartswitchassistant": {
+    "name": "Smart Switch",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Data transfer tool"
+  },
+  "com.samsung.android.themecenter": {
+    "name": "Theme Center",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Samsung themes"
+  },
+  "com.samsung.android.themestore": {
+    "name": "Theme Store",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Theme marketplace"
+  },
+  "com.sec.android.app.samsungapps": {
+    "name": "Galaxy Store",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Samsung app store"
+  },
+  "com.samsung.android.app.routines": {
+    "name": "Bixby Routines",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Automation routines"
+  },
+  "com.samsung.android.da.daagent": {
+    "name": "Dual Messenger",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Clone apps feature"
+  },
+  "com.samsung.android.app.clipboardedge": {
+    "name": "Clipboard Edge",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Edge panel clipboard"
+  },
+  "com.samsung.android.app.cocktailbarservice": {
+    "name": "Edge Panels",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Edge panel service"
+  },
+  "com.samsung.android.app.appsedge": {
+    "name": "Apps Edge",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Edge panel apps shortcut"
+  },
+  "com.samsung.android.app.taskedge": {
+    "name": "Task Edge",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Edge panel tasks"
+  },
+  "com.samsung.android.app.smartcapture": {
+    "name": "Smart Capture",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Screenshot tools (scroll capture)"
+  },
+  "com.samsung.android.shortcutbackupservice": {
+    "name": "Shortcut Backup",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Backup shortcuts"
+  },
+  "com.samsung.android.app.galaxyfinder": {
+    "name": "Galaxy Finder",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Finder search widget"
+  },
+  "com.samsung.android.app.social": {
+    "name": "Samsung Social",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Social media integration"
+  },
+  "com.samsung.android.beaconmanager": {
+    "name": "Beacon Manager",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Bluetooth beacon tracking"
+  },
+  "com.samsung.android.ipsgeofence": {
+    "name": "IPS Geofence",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Indoor location service"
+  },
+  "com.samsung.android.location": {
+    "name": "Samsung Location SDK",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Samsung location framework"
+  },
+  "com.samsung.android.app.ledbackcover": {
+    "name": "LED Back Cover",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "LED case integration"
+  },
+  "com.samsung.android.app.watchmanagerstub": {
+    "name": "Watch Manager Stub",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Watch setup stub"
+  },
+  "com.samsung.android.service.stplatform": {
+    "name": "SmartThings Platform",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "IoT platform service"
+  },
+  "com.samsung.android.oneconnect": {
+    "name": "SmartThings",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "IoT device control"
+  },
+  "com.samsung.android.keyguardwallpaperupdator": {
+    "name": "Wallpaper Updater",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Dynamic lock screen wallpaper provider"
+  },
+  "com.samsung.android.samsungappswidget": {
+    "name": "Galaxy Store Widget",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Galaxy Store home widget"
+  },
+  "com.samsung.android.app.sbrowseredge": {
+    "name": "Internet Edge Panel",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Samsung Internet edge panel"
+  },
+  "com.samsung.android.messaging": {
+    "name": "Samsung Messages",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Samsung SMS app"
+  },
+  "com.samsung.android.email.provider": {
+    "name": "Samsung Email",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Samsung email client"
+  },
+  "com.samsung.android.app.sbrowser": {
+    "name": "Samsung Internet",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Samsung web browser"
+  },
+  "com.monotype.android.font.chococooky": {
+    "name": "Font: ChocoCooky",
+    "category": "Fonts",
+    "risk": "safe",
+    "desc": "Extra font"
+  },
+  "com.monotype.android.font.cooljazz": {
+    "name": "Font: CoolJazz",
+    "category": "Fonts",
+    "risk": "safe",
+    "desc": "Extra font"
+  },
+  "com.monotype.android.font.foundation": {
+    "name": "Font: Foundation",
+    "category": "Fonts",
+    "risk": "safe",
+    "desc": "Extra font"
+  },
+  "com.monotype.android.font.rosemary": {
+    "name": "Font: Rosemary",
+    "category": "Fonts",
+    "risk": "safe",
+    "desc": "Extra font"
+  },
+  "com.monotype.android.font.flipfont": {
+    "name": "Font: FlipFont",
+    "category": "Fonts",
+    "risk": "safe",
+    "desc": "Extra font"
+  },
+  "com.monotype.android.font.samsungone": {
+    "name": "Font: Samsung One",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "Default system font — do not remove"
+  },
+  "com.samsung.android.watch.watchface.animal": {
+    "name": "Watch Face: Animal",
+    "category": "Watch Faces",
+    "risk": "safe",
+    "desc": "Novelty watch face"
+  },
+  "com.samsung.android.watch.watchface.aremoji": {
+    "name": "Watch Face: AR Emoji",
+    "category": "Watch Faces",
+    "risk": "safe",
+    "desc": "AR emoji watch face"
+  },
+  "com.samsung.android.watch.watchface.bitmoji": {
+    "name": "Watch Face: Bitmoji",
+    "category": "Watch Faces",
+    "risk": "safe",
+    "desc": "Bitmoji watch face"
+  },
+  "com.samsung.android.watch.watchface.endangeredanimal": {
+    "name": "Watch Face: Endangered Animal",
+    "category": "Watch Faces",
+    "risk": "safe",
+    "desc": "Animal watch face"
+  },
+  "com.samsung.android.watch.watchface.livewallpaper": {
+    "name": "Watch Face: Live Wallpaper",
+    "category": "Watch Faces",
+    "risk": "safe",
+    "desc": "Live wallpaper face"
+  },
+  "com.samsung.android.watch.watchface.mystyle": {
+    "name": "Watch Face: My Style",
+    "category": "Watch Faces",
+    "risk": "safe",
+    "desc": "Custom style face"
+  },
+  "com.samsung.android.watch.watchface.superfiction": {
+    "name": "Watch Face: Superfiction",
+    "category": "Watch Faces",
+    "risk": "safe",
+    "desc": "Art watch face"
+  },
+  "com.samsung.android.watch.watchface.together": {
+    "name": "Watch Face: Together",
+    "category": "Watch Faces",
+    "risk": "safe",
+    "desc": "Shared watch face"
+  },
+  "com.samsung.android.watch.watchface.tickingsound": {
+    "name": "Watch Face: Ticking Sound",
+    "category": "Watch Faces",
+    "risk": "safe",
+    "desc": "Ticking sound face"
+  },
+  "com.samsung.android.watch.watchface.dualwatch": {
+    "name": "Watch Face: Dual Watch",
+    "category": "Watch Faces",
+    "risk": "safe",
+    "desc": "Dual time face"
+  },
+  "com.samsung.android.watch.watchface.InteractiveNumber": {
+    "name": "Watch Face: Interactive Number",
+    "category": "Watch Faces",
+    "risk": "safe",
+    "desc": "Interactive face"
+  },
+  "com.samsung.android.watch.watchface.typography": {
+    "name": "Watch Face: Typography",
+    "category": "Watch Faces",
+    "risk": "safe",
+    "desc": "Typography face"
+  },
+  "com.samsung.sree": {
+    "name": "Sree Watch Face",
+    "category": "Watch Faces",
+    "risk": "safe",
+    "desc": "Animated face"
+  },
+  "com.samsung.sree.classic": {
+    "name": "Sree Classic",
+    "category": "Watch Faces",
+    "risk": "safe",
+    "desc": "Animated face"
+  },
+  "com.samsung.sree.countdown": {
+    "name": "Sree Countdown",
+    "category": "Watch Faces",
+    "risk": "safe",
+    "desc": "Animated face"
+  },
+  "com.samsung.sree.digital": {
+    "name": "Sree Digital",
+    "category": "Watch Faces",
+    "risk": "safe",
+    "desc": "Animated face"
+  },
+  "com.samsung.sree.spin": {
+    "name": "Sree Spin",
+    "category": "Watch Faces",
+    "risk": "safe",
+    "desc": "Animated face"
+  },
+  "com.google.android.apps.messaging": {
+    "name": "Google Messages",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Google SMS app"
+  },
+  "com.google.android.apps.tachyon": {
+    "name": "Google Meet",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Video calling"
+  },
+  "com.google.android.youtube": {
+    "name": "YouTube",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Video streaming"
+  },
+  "com.google.android.apps.youtube.music": {
+    "name": "YouTube Music",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Music streaming"
+  },
+  "com.google.android.apps.docs": {
+    "name": "Google Drive",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Cloud storage"
+  },
+  "com.google.android.apps.photos": {
+    "name": "Google Photos",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Photo gallery"
+  },
+  "com.google.android.gm": {
+    "name": "Gmail",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Email client"
+  },
+  "com.google.android.calendar": {
+    "name": "Google Calendar",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Calendar app"
+  },
+  "com.google.android.tts": {
+    "name": "Google TTS",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Text-to-speech"
+  },
+  "com.google.android.marvin.talkback": {
+    "name": "TalkBack",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Accessibility screen reader"
+  },
+  "com.google.android.apps.wellbeing": {
+    "name": "Digital Wellbeing",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Screen time tracking"
+  },
+  "com.google.android.configupdater": {
+    "name": "Config Updater",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Background config sync"
+  },
+  "com.google.android.as": {
+    "name": "Android System Intelligence",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Smart suggestions — battery heavy"
+  },
+  "com.google.android.as.oss": {
+    "name": "Android System Intelligence OSS",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Open source component"
+  },
+  "com.google.android.feedback": {
+    "name": "Google Feedback",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Bug reporting"
+  },
+  "com.google.android.printservice.recommendation": {
+    "name": "Print Service",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Printer discovery"
+  },
+  "com.google.android.inputmethod.latin": {
+    "name": "Gboard",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Google keyboard"
+  },
+  "com.google.android.wearable.assistant": {
+    "name": "Watch Assistant",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Google Assistant on watch"
+  },
+  "com.google.android.safetycore": {
+    "name": "Safety Core",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Background content scanning"
+  },
+  "com.android.adservices.api": {
+    "name": "Ad Services",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Google ad framework"
+  },
+  "com.android.federatedcompute.services": {
+    "name": "Federated Compute",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "On-device ML training"
+  },
+  "com.android.ondevicepersonalization.services": {
+    "name": "On-Device Personalization",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Personalization service"
+  },
+  "com.google.android.apps.docs.editors.sheets": {
+    "name": "Google Sheets",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Spreadsheet editor"
+  },
+  "com.google.android.apps.docs.editors.slides": {
+    "name": "Google Slides",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Presentation editor"
+  },
+  "com.google.android.apps.docs.editors.docs": {
+    "name": "Google Docs",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Document editor"
+  },
+  "com.google.android.apps.maps": {
+    "name": "Google Maps",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Navigation — safe to remove if you use an alternative"
+  },
+  "com.google.android.apps.nbu.files": {
+    "name": "Files by Google",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "File manager"
+  },
+  "com.google.android.keep": {
+    "name": "Google Keep",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Notes app"
+  },
+  "com.google.android.apps.restore": {
+    "name": "Google Restore",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Device restore tool"
+  },
+  "com.google.android.apps.subscriptions.red": {
+    "name": "Google One",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Google storage subscription"
+  },
+  "com.google.android.apps.turbo": {
+    "name": "Device Health Services",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "Battery stats — removing crashes Battery Settings"
+  },
+  "com.google.android.health.connect.backuprestore": {
+    "name": "Health Connect Backup",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Health data backup"
+  },
+  "com.google.android.healthconnect.controller": {
+    "name": "Health Connect",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Health data controller — remove if not using fitness tracking"
+  },
+  "com.google.android.overlay.gmsconfig.photos": {
+    "name": "Photos Config Overlay",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "Config overlay for Google Photos"
+  },
+  "com.google.android.gms.policy_sidecar_aps": {
+    "name": "GMS Policy Sidecar",
+    "category": "Google",
+    "risk": "safe",
+    "desc": "GMS policy component"
+  },
+  "com.google.android.projection.gearhead": {
+    "name": "Android Auto",
+    "category": "Connectivity",
+    "risk": "dangerous",
+    "desc": "Car connectivity"
+  },
+  "com.google.android.googlequicksearchbox": {
+    "name": "Google Search / Assistant",
+    "category": "Google",
+    "risk": "caution",
+    "desc": "Google Search bar and Google Assistant"
+  },
+  "com.google.android.apps.nbu.paisa.user": {
+    "name": "Google Pay",
+    "category": "Google",
+    "risk": "caution",
+    "desc": "Google payments (GPay India)"
+  },
+  "com.samsung.android.app.omcagent": {
+    "name": "OMC Agent",
+    "category": "Bloatware",
+    "risk": "safe",
+    "desc": "Carrier config agent"
+  },
+  "com.samsung.android.cidmanager": {
+    "name": "CID Manager",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "Carrier ID — system critical"
+  },
+  "com.samsung.android.dsms": {
+    "name": "Device Security",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "Samsung device security"
+  },
+  "com.samsung.android.app.dressroom": {
+    "name": "Wallpaper Services",
+    "category": "Samsung Services",
+    "risk": "caution",
+    "desc": "Lock/home screen wallpaper picker — needed for Samsung Gallery wallpaper setting"
+  },
+  "com.samsung.android.app.aodservice": {
+    "name": "AOD Service",
+    "category": "Samsung Services",
+    "risk": "caution",
+    "desc": "Always On Display — disabling removes lock screen clock/widgets"
+  },
+  "com.samsung.android.fmm": {
+    "name": "Find My Mobile",
+    "category": "Samsung Services",
+    "risk": "caution",
+    "desc": "Device tracking — disable if using Google Find My"
+  },
+  "com.samsung.android.smartsuggestions": {
+    "name": "Smart Suggestions",
+    "category": "Samsung Services",
+    "risk": "safe",
+    "desc": "Search suggestions — background drain"
+  },
+  "com.samsung.mediasearch": {
+    "name": "Media Search",
+    "category": "Samsung Services",
+    "risk": "safe",
+    "desc": "Content search — background drain"
+  },
+  "com.sec.hearingadjust": {
+    "name": "Hearing Adjust",
+    "category": "Samsung Services",
+    "risk": "safe",
+    "desc": "Hearing accessibility"
+  },
+  "com.samsung.android.intelligenceservice2": {
+    "name": "Intelligence Service",
+    "category": "Samsung Services",
+    "risk": "safe",
+    "desc": "Samsung AI features"
+  },
+  "com.samsung.android.svoiceime": {
+    "name": "Samsung Voice Input",
+    "category": "Samsung Services",
+    "risk": "safe",
+    "desc": "Voice typing"
+  },
+  "com.samsung.android.rubin.app": {
+    "name": "Rubin AI",
+    "category": "Samsung Services",
+    "risk": "safe",
+    "desc": "Samsung AI service"
+  },
+  "com.samsung.SMT": {
+    "name": "Samsung TTS",
+    "category": "Samsung Services",
+    "risk": "caution",
+    "desc": "Text-to-speech — remove only if using Google TTS"
+  },
+  "com.samsung.android.privateshare": {
+    "name": "Private Share",
+    "category": "Samsung Services",
+    "risk": "safe",
+    "desc": "Blockchain-based sharing"
+  },
+  "com.samsung.android.app.smartmirroring": {
+    "name": "Smart View",
+    "category": "Connectivity",
+    "risk": "caution",
+    "desc": "Screen mirroring"
+  },
+  "com.samsung.android.mdx.quickboard": {
+    "name": "DeX Quick Board",
+    "category": "Connectivity",
+    "risk": "caution",
+    "desc": "DeX on-screen keyboard"
+  },
+  "com.samsung.android.sdhms.ai": {
+    "name": "Device Health AI",
+    "category": "Samsung Services",
+    "risk": "safe",
+    "desc": "AI-based device health monitoring"
+  },
+  "com.samsung.android.honeyboard": {
+    "name": "Samsung Keyboard",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "Default keyboard — DO NOT REMOVE"
+  },
+  "com.samsung.android.app.contacts": {
+    "name": "Contacts",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "Contacts app"
+  },
+  "com.samsung.android.dialer": {
+    "name": "Phone/Dialer",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "Phone calling app"
+  },
+  "com.samsung.android.incallui": {
+    "name": "In-Call UI",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "Call screen interface"
+  },
+  "com.sec.android.app.launcher": {
+    "name": "One UI Home",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "Home launcher"
+  },
+  "com.samsung.android.lool": {
+    "name": "Device Care",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "Battery & device management"
+  },
+  "com.google.android.gms": {
+    "name": "Google Play Services",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "Core Google framework"
+  },
+  "com.google.android.gsf": {
+    "name": "Google Services Framework",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "Core Google framework"
+  },
+  "com.android.vending": {
+    "name": "Play Store",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "App store"
+  },
+  "com.google.android.webview": {
+    "name": "WebView",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "Web rendering engine"
+  },
+  "com.samsung.android.game.gos": {
+    "name": "Game Optimizing Service",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "Thermal/game management"
+  },
+  "com.samsung.android.mobileservice": {
+    "name": "Mobile Service",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "Core Samsung service — removing may bootloop watch"
+  },
+  "com.sec.android.soagent": {
+    "name": "SO Agent",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "System operations — removing may bootloop watch"
+  },
+  "com.google.android.packageinstaller": {
+    "name": "Package Installer",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "Installs apps"
+  },
+  "com.google.android.permissioncontroller": {
+    "name": "Permission Controller",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "Manages app permissions"
+  },
+  "com.android.providers.settings": {
+    "name": "Settings Provider",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "Core settings storage"
+  },
+  "com.android.providers.media": {
+    "name": "Media Provider",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "Media database"
+  },
+  "com.android.providers.media.module": {
+    "name": "Media Provider Module",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "Media framework"
+  },
+  "com.android.bluetooth": {
+    "name": "Bluetooth",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "Bluetooth stack"
+  },
+  "com.android.nfc": {
+    "name": "NFC",
+    "category": "System",
+    "risk": "dangerous",
+    "desc": "NFC service"
+  },
+  "com.samsung.android.service.health": {
+    "name": "Samsung Health Service",
+    "category": "Health",
+    "risk": "dangerous",
+    "desc": "Core health tracking"
+  },
+  "com.samsung.android.shealthmonitor": {
+    "name": "Samsung Health Monitor",
+    "category": "Health",
+    "risk": "dangerous",
+    "desc": "BP/ECG monitoring"
+  },
+  "com.samsung.android.wear.shealth": {
+    "name": "Samsung Health (Watch)",
+    "category": "Health",
+    "risk": "dangerous",
+    "desc": "Watch health app"
+  },
+  "com.google.android.wearable.healthservices": {
+    "name": "Health Services",
+    "category": "Health",
+    "risk": "dangerous",
+    "desc": "Wear OS health platform"
+  },
+  "com.sec.android.app.shealth": {
+    "name": "Samsung Health",
+    "category": "Health",
+    "risk": "dangerous",
+    "desc": "Main health app"
+  },
+  "com.samsung.android.mdx": {
+    "name": "DeX Core",
+    "category": "Connectivity",
+    "risk": "dangerous",
+    "desc": "Samsung DeX desktop mode"
+  },
+  "com.samsung.android.mdx.kit": {
+    "name": "DeX Kit",
+    "category": "Connectivity",
+    "risk": "dangerous",
+    "desc": "DeX components"
+  },
+  "com.flipkart.android": {
+    "name": "Flipkart",
+    "category": "Indian Apps",
+    "risk": "safe",
+    "desc": "E-commerce shopping"
+  },
+  "com.myntra.android": {
+    "name": "Myntra",
+    "category": "Indian Apps",
+    "risk": "safe",
+    "desc": "Fashion shopping"
+  },
+  "in.swiggy.android": {
+    "name": "Swiggy",
+    "category": "Indian Apps",
+    "risk": "safe",
+    "desc": "Food delivery"
+  },
+  "com.application.zomato": {
+    "name": "Zomato",
+    "category": "Indian Apps",
+    "risk": "safe",
+    "desc": "Food delivery"
+  },
+  "in.amazon.mShop.android.shopping": {
+    "name": "Amazon India",
+    "category": "Indian Apps",
+    "risk": "safe",
+    "desc": "E-commerce shopping"
+  },
+  "com.jio.myjio": {
+    "name": "MyJio",
+    "category": "Indian Apps",
+    "risk": "safe",
+    "desc": "Jio services hub"
+  },
+  "com.jio.media.jiobeats": {
+    "name": "JioSaavn",
+    "category": "Indian Apps",
+    "risk": "safe",
+    "desc": "Music streaming"
+  },
+  "com.jio.jioplay.tv": {
+    "name": "JioTV",
+    "category": "Indian Apps",
+    "risk": "safe",
+    "desc": "Live TV streaming"
+  },
+  "com.Jenga.JioChat": {
+    "name": "JioChat",
+    "category": "Indian Apps",
+    "risk": "safe",
+    "desc": "Messaging app"
+  },
+  "com.jio.jiocloud": {
+    "name": "JioCloud",
+    "category": "Indian Apps",
+    "risk": "safe",
+    "desc": "Cloud storage"
+  },
+  "in.startv.hotstar": {
+    "name": "Disney+ Hotstar",
+    "category": "Indian Apps",
+    "risk": "safe",
+    "desc": "Video streaming"
+  },
+  "com.meesho.supply": {
+    "name": "Meesho",
+    "category": "Indian Apps",
+    "risk": "safe",
+    "desc": "Budget shopping"
+  },
+  "com.grofers.customerapp": {
+    "name": "Blinkit",
+    "category": "Indian Apps",
+    "risk": "safe",
+    "desc": "Grocery delivery"
+  },
+  "com.zeptoconsumerapp": {
+    "name": "Zepto",
+    "category": "Indian Apps",
+    "risk": "safe",
+    "desc": "Quick grocery delivery"
+  },
+  "com.csam.icici.bank.imobile": {
+    "name": "iMobile Pay",
+    "category": "Indian Apps",
+    "risk": "safe",
+    "desc": "ICICI banking app"
+  },
+  "com.dreamplug.androidapp": {
+    "name": "CRED",
+    "category": "Indian Apps",
+    "risk": "safe",
+    "desc": "Credit card payments"
+  },
+  "com.nextbillion.groww": {
+    "name": "Groww",
+    "category": "Indian Apps",
+    "risk": "safe",
+    "desc": "Investment/trading"
+  },
+  "money.super.payments": {
+    "name": "SuperMoney",
+    "category": "Indian Apps",
+    "risk": "safe",
+    "desc": "Payments app"
+  },
+  "com.app.abhibus": {
+    "name": "AbhiBus",
+    "category": "Indian Apps",
+    "risk": "safe",
+    "desc": "Bus booking"
+  },
+  "in.redbus.android": {
+    "name": "RedBus",
+    "category": "Indian Apps",
+    "risk": "safe",
+    "desc": "Bus booking"
+  },
+  "org.cris.aikyam": {
+    "name": "Aikyam (Railways)",
+    "category": "Indian Apps",
+    "risk": "safe",
+    "desc": "Indian Railways app"
+  },
+  "com.whatsapp": {
+    "name": "WhatsApp",
+    "category": "User Apps",
+    "risk": "safe",
+    "desc": "Messaging"
+  },
+  "org.telegram.messenger": {
+    "name": "Telegram",
+    "category": "User Apps",
+    "risk": "safe",
+    "desc": "Messaging"
+  },
+  "com.truecaller": {
+    "name": "Truecaller",
+    "category": "User Apps",
+    "risk": "safe",
+    "desc": "Caller ID / spam filter"
+  },
+  "com.microsoft.teams": {
+    "name": "Microsoft Teams",
+    "category": "User Apps",
+    "risk": "safe",
+    "desc": "Work collaboration"
+  },
+  "com.microsoft.office.outlook": {
+    "name": "Outlook",
+    "category": "User Apps",
+    "risk": "safe",
+    "desc": "Email client"
+  },
+  "com.x8bit.bitwarden": {
+    "name": "Bitwarden",
+    "category": "User Apps",
+    "risk": "safe",
+    "desc": "Password manager"
+  },
+  "com.brave.browser": {
+    "name": "Brave Browser",
+    "category": "User Apps",
+    "risk": "safe",
+    "desc": "Privacy browser"
+  },
+  "org.mozilla.firefox": {
+    "name": "Firefox",
+    "category": "User Apps",
+    "risk": "safe",
+    "desc": "Web browser"
+  },
+  "com.reddit.frontpage": {
+    "name": "Reddit",
+    "category": "User Apps",
+    "risk": "safe",
+    "desc": "Social media"
+  },
+  "com.openai.chatgpt": {
+    "name": "ChatGPT",
+    "category": "User Apps",
+    "risk": "safe",
+    "desc": "AI chatbot"
+  },
+  "com.anthropic.claude": {
+    "name": "Claude",
+    "category": "User Apps",
+    "risk": "safe",
+    "desc": "AI assistant"
+  },
+  "com.deepseek.chat": {
+    "name": "DeepSeek",
+    "category": "User Apps",
+    "risk": "safe",
+    "desc": "AI chatbot"
+  },
+  "com.intsig.camscanner": {
+    "name": "CamScanner",
+    "category": "User Apps",
+    "risk": "safe",
+    "desc": "Document scanner"
+  },
+  "nu.gpu.nagram": {
+    "name": "Nagram",
+    "category": "User Apps",
+    "risk": "safe",
+    "desc": "Telegram client (modded)"
+  },
+  "app.morphe.android.youtube": {
+    "name": "ReVanced YouTube",
+    "category": "User Apps",
+    "risk": "safe",
+    "desc": "Modded YouTube"
+  },
+  "app.morphe.android.apps.youtube.music": {
+    "name": "ReVanced Music",
+    "category": "User Apps",
+    "risk": "safe",
+    "desc": "Modded YouTube Music"
+  },
+  "app.revanced.android.gms": {
+    "name": "ReVanced MicroG",
+    "category": "User Apps",
+    "risk": "safe",
+    "desc": "MicroG for ReVanced"
+  },
+  "app.clearsms": {
+    "name": "Clear SMS",
+    "category": "User Apps",
+    "risk": "safe",
+    "desc": "Lightweight SMS app"
+  },
+  "org.fossify.messages": {
+    "name": "Fossify Messages",
+    "category": "User Apps",
+    "risk": "safe",
+    "desc": "Open-source SMS"
+  },
+  "com.music.bitchord": {
+    "name": "BitChord",
+    "category": "User Apps",
+    "risk": "safe",
+    "desc": "Music player"
+  }
+}
