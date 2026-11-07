@@ -1,176 +1,197 @@
-# SAMurai
+# SAMurai — Android Debloater & Optimizer
 
-A zero-dependency, web-based tool for debloating and optimizing Android phones and watches via ADB. Runs entirely on Python 3 stdlib — no pip installs needed.
+A lightweight, zero-dependency, web-based tool for debloating, securing, and optimizing Android smartphones and watches via ADB. Runs entirely on the Python 3 standard library — no pip packages, node dependencies, or build tools required.
 
-Supports Samsung, Xiaomi, OnePlus, Realme, OPPO, Vivo, and Google Pixel devices.
+Supports **Samsung Galaxy**, **Google Pixel**, **Xiaomi / HyperOS**, **OnePlus**, **Realme**, **OPPO**, and **Vivo** devices.
 
-## Features
+![SAMurai Dashboard](assets/dashboard.png)
 
-- **Wireless ADB** — pair and connect to devices over WiFi
-- **Smart package classification** — 5,400+ known packages from the [Universal Android Debloater](https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation) project, plus custom databases for Samsung, Google, carrier bloatware, and brand-specific packages
-- **Safe removal** — uses `pm uninstall -k --user 0` (reversible, data preserved) with `pm disable-user` as fallback
-- **One-click restore** — reinstall any removed package
-- **Debloat presets** — Minimal, iPhone Efficiency, and Aggressive profiles
-- **Battery health** — ASOC and BSOH readings, temperature, charge settings
-- **Permission manager** — inspect and revoke runtime permissions per app
-- **Security scanner** — device admins, accessibility services, sideloaded apps, ADB exposure
-- **Background restrictor** — deny background activity and set standby buckets
-- **Process viewer** — see running apps, force stop, restrict
-- **Default app manager** — set SMS, browser, assistant, dialer, home defaults
-- **Private DNS** — configure system-wide ad blocking
-- **Knox/warranty check** — verify warranty bit, verified boot, bootloader status
-- **Device profiles** — export/import package state for backup or migration
-- **Storage maintenance** — run TRIM on flash storage
-- **AI-powered analysis** — connect any OpenAI-compatible API for package analysis, smart presets, and chat assistance
-- **Editable databases** — all package lists stored as JSON files, editable from the UI or any text editor
+> [!WARNING]
+> ### ⚠️ Disclaimer — Use at Your Own Risk
+> Modifying system packages, restricting background processes, or altering system configurations can affect device stability and features. While SAMurai is designed with safety precautions (using non-destructive user-space uninstalls `pm uninstall -k --user 0` that keep data intact and are fully reversible), **you are solely responsible for actions performed on your device**. Always review package selections and create backups before applying aggressive presets.
 
-## Requirements
+---
 
-- **Python 3.6+** (uses only stdlib — no pip packages)
-- **ADB** (Android Debug Bridge)
-  - macOS: `brew install android-platform-tools`
-  - Debian/Ubuntu: `sudo apt install adb`
-  - Fedora: `sudo dnf install android-tools`
-  - Arch: `sudo pacman -S android-tools`
-  - Windows: download from [Android SDK Platform Tools](https://developer.android.com/tools/releases/platform-tools)
-- **Wireless Debugging** enabled on the target device (Settings > Developer Options > Wireless Debugging)
+## 🔋 Hardware Battery Health (ASOC) — Samsung Devices
 
-## Quick Start
+One of SAMurai's standout features is the ability to read real, calibrated hardware battery capacity directly from device kernel telemetry:
 
-### macOS (double-click)
+![Dashboard Metrics](assets/dashboard.png)
 
-1. Clone this repo
-2. Double-click `SAMurai.command`
-3. The web UI opens at `http://127.0.0.1:8080`
+* **Real Hardware ASOC**: Reads the true `mSavedBatteryAsoc` (Actual State of Charge percentage) and `BSOH` (Battery State of Health) metrics, cycle counts, voltage, and real-time thermals.
+* **Beyond Android's Standard UI**: Standard Android builds typically hide true hardware battery degradation percentages from users. SAMurai extracts deep hardware battery metrics via `dumpsys battery`.
+* **Important Compatibility Note**:
+  > [!NOTE]
+  > **Tested & Verified on Samsung Galaxy devices only.** Samsung One UI devices expose internal battery calibration registers through their power management HAL. On non-Samsung devices (Pixel, Xiaomi, OnePlus, etc.), standard battery level and temperature are displayed, but the ASOC health percentage may report as unavailable or uncalibrated depending on OEM firmware restrictions.
 
-### Linux (double-click or terminal)
+---
 
-1. Clone this repo
-2. Run `./SAMurai.sh` — or make it executable and double-click in your file manager
-3. The web UI opens at `http://127.0.0.1:8080`
+## ✨ Features Overview
 
-### Any platform (terminal)
+### 1. Smart Package Management & Layered Catalog
+* **5,400+ Classified Packages**: Layered classification leveraging the [Universal Android Debloater (UAD)](https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation) database, OEM brand dictionaries, and curated safety tiers.
+* **Risk Categorization**: Clear badges for **Safe** (100% bloatware), **Caution** (feature-dependent), **Dangerous** (protected/system-critical), and **Unknown**.
+* **Reversible Uninstalls**: Uses `pm uninstall -k --user 0` to disable packages for User 0 while preserving user data and system partition integrity.
+* **One-Click Reinstall**: Easily restore uninstalled packages anytime from the **Removed** tab.
 
-```bash
-git clone https://github.com/user/SAMurai.git
-cd SAMurai
-python3 debloater.py
+![Apps Manager](assets/apps-manager.png)
+
+---
+
+### 2. AI-Powered Smart Cleanup & Optimization Assistant
+* **Autonomous Package Analysis**: Connect your preferred AI model (NVIDIA Nemotron, Google Gemini, OpenAI, Groq, OpenRouter, or local Ollama) to analyze your specific device package manifest.
+* **Custom Cleanup Plans**: AI reads your installed packages, cross-references with UAD risk lists, and generates a tailored debloat proposal grouped by purpose (e.g. carrier apps, redundant OEM bloat, telemetry).
+* **Interactive AI Chat**: Ask natural language questions like *"Can I safely remove Samsung Kids or Quick Share without breaking Bluetooth?"* directly inside the app.
+
+![AI Smart Cleanup](assets/ai-cleanup.png)
+
+---
+
+### 3. One-Click Debloat Presets
+Quickly optimize devices with tested debloat profiles:
+* **Minimal Cleanup**: Removes obvious bloatware (Bixby, promo apps, novelty watch faces, carrier diagnostics).
+* **iPhone Efficiency**: Removes safe bloatware and restricts background execution for aggressive power-hungry apps for a clean, snappy iOS-like standby experience.
+* **Aggressive**: Strips non-essential OEM suites for maximum battery life and RAM headroom.
+
+![Presets](assets/presets.png)
+
+---
+
+### 4. Interactive Wireless ADB Setup & Auto Blocker Guide
+* **Interactive 5-Step Tutorial**: Built-in modal walks users through unlocking Developer Options, wireless pairing, and dual-port configurations.
+* **Samsung One UI 6+ Auto Blocker Fix**: Detailed interactive guide on disabling Samsung's Auto Blocker (`Settings > Security and privacy > Auto Blocker`) which blocks wireless ADB handshakes and cable commands.
+* **Dual-Port Demystification**: Clear visual breakdown explaining the difference between the rotating pairing port and the persistent connection port.
+
+---
+
+### 5. Deep Security Audit & Knox Verification
+* **Security Scanner**: Inspects active **Device Administrators**, **Notification Listeners**, **Draw-over-other-apps (Overlay)** privileges, and audits **Sideloaded apps** installed from outside official stores.
+* **Samsung Knox & Warranty Bit**: Verifies hardware `warranty_bit` (`0x0`), verified boot state (`green`), and bootloader lock integrity.
+
+![Security Audit](assets/security-scan.png)
+![Settings & Knox](assets/settings-knox.png)
+
+---
+
+### 6. Hardware Optimization & System Tweaks
+* **Performance Speedup**: Tune animation scaling (`0.5x` / off) for an instant snappier feel.
+* **Background Scanning**: Disable always-on Wi-Fi and Bluetooth background scanning to save battery.
+* **Storage TRIM**: Run manual hardware `fstrim` across flash storage partitions to reclaim deleted flash blocks and maintain high write speeds.
+* **Granular Permission Manager**: Inspect and revoke sensitive runtime permissions (Location, Contacts, Call Logs, Storage) per application.
+
+![System Optimizer](assets/optimizer.png)
+
+---
+
+## 📋 Requirements
+
+* **Python 3.6+** (Standard library only — zero pip dependencies required)
+* **ADB** (Android Debug Bridge)
+  * **macOS**: `brew install android-platform-tools`
+  * **Debian / Ubuntu**: `sudo apt install adb`
+  * **Fedora**: `sudo dnf install android-tools`
+  * **Arch Linux**: `sudo pacman -S android-tools`
+  * **Windows**: Download standalone binaries from [Android SDK Platform Tools](https://developer.android.com/tools/releases/platform-tools)
+* **Wireless Debugging** or **USB Debugging** enabled on the Android device.
+
+---
+
+## 🚀 Quick Start
+
+### macOS (One-Click)
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/antonysamuel/SAMurai-Android-Debloater.git
+   cd SAMurai-Android-Debloater
+   ```
+2. Double-click `SAMurai.command` (or run `python3 debloater.py`).
+3. The web dashboard will open automatically at `http://127.0.0.1:8080`.
+
+### Linux (One-Click or Terminal)
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/antonysamuel/SAMurai-Android-Debloater.git
+   cd SAMurai-Android-Debloater
+   ```
+2. Run `./SAMurai.sh` (or `python3 debloater.py`).
+3. The browser will open automatically.
+
+### Windows
+```cmd
+git clone https://github.com/antonysamuel/SAMurai-Android-Debloater.git
+cd SAMurai-Android-Debloater
+python debloater.py
 ```
 
-The web UI opens automatically in your default browser.
+---
 
-## Usage
+## 📱 Wireless Connection Guide
 
-### Connect a device
+1. **Samsung One UI 6.0+ Users**:
+   Open **Settings → Security and privacy → Auto Blocker** and toggle it **OFF**.
+2. **Enable Wireless Debugging**:
+   Go to **Settings → Developer Options → Wireless Debugging** and toggle it **ON**.
+3. **Pair the Device**:
+   * Tap *"Pair device with pairing code"*.
+   * In SAMurai's Dashboard, enter the IP, the 5-digit **Pairing Port** from the dialog, and the 6-digit **Code**.
+   * Click **Pair**.
+4. **Connect**:
+   * Note the main IP & Port shown on the parent Wireless Debugging screen (not the pairing port).
+   * Enter the port and click **Connect**.
+5. Once connected, your device model, real-time battery stats, and package counts will appear on the dashboard.
 
-1. **Samsung Users (One UI 6.0+)**: Turn OFF **Auto Blocker** in Settings > Security and privacy > Auto Blocker (Auto Blocker blocks ADB commands and wireless handshakes).
-2. On your phone: Settings > Developer Options > Wireless Debugging (toggle ON and tap "Allow").
-3. Tap "Pair device with pairing code".
-4. In the web UI Dashboard (or using the built-in **Interactive Setup Guide**), enter the IP, pairing port, and code — click **Pair**.
-5. Enter the IP and the main wireless debugging port — click **Connect**.
+---
 
-> The wireless debugging port rotates frequently on Samsung devices. If you lose connection, check the port under Wireless Debugging and reconnect. You can also launch the **Wireless Setup Guide & Demo** in the web UI for an interactive walkthrough.
-
-### Debloat
-
-- **Apps tab**: browse installed packages, filter by risk level or category, select and batch remove
-- **Presets tab**: apply one-click debloat profiles (Minimal, iPhone Efficiency, Aggressive)
-- **Optimize tab**: reduce animations, disable background scanning, run storage TRIM
-
-### AI Features (optional)
-
-1. Go to **AI Settings**
-2. Select a provider (NVIDIA, Gemini, OpenAI, Groq, OpenRouter, Ollama, or any custom endpoint)
-3. Enter your API key and save
-4. Use **AI Chat** for optimization advice or **AI Analyze** for automated package analysis
-
-## Project Structure
+## 📁 Project Architecture
 
 ```
 SAMurai/
-├── debloater.py              # Entry point
-├── SAMurai.command            # macOS double-click launcher
-├── SAMurai.sh                 # Linux launcher
-├── src/
-│   ├── adb.py                # ADB command execution
-│   ├── ai.py                 # AI provider config and chat
-│   ├── battery.py            # Battery info, charging, optimization
-│   ├── database.py           # JSON database loading, UAD sync
-│   ├── devices.py            # Device detection and info
-│   ├── packages.py           # Package listing, removal, presets
-│   ├── security.py           # Security scanning, permissions
-│   ├── server.py             # HTTP server and API routes
-│   └── settings.py           # Defaults, DNS, Knox, profiles
+├── debloater.py              # Application entrypoint & HTTP server bootstrap
+├── SAMurai.command           # macOS double-click launcher
+├── SAMurai.sh                # Linux launcher
+├── assets/                   # Screenshots and UI media
+│   ├── dashboard.png
+│   ├── apps-manager.png
+│   ├── ai-cleanup.png
+│   ├── presets.png
+│   ├── permissions.png
+│   ├── processes.png
+│   ├── security-scan.png
+│   ├── settings-knox.png
+│   └── optimizer.png
+├── src/                      # Pure Python stdlib backend (Zero external dependencies)
+│   ├── adb.py                # ADB command execution & output parsing
+│   ├── ai.py                 # Multi-provider AI interface (OpenAI, Gemini, Ollama)
+│   ├── battery.py            # Battery metrics, ASOC calibration, charging controls
+│   ├── database.py           # Layered JSON databases & GitHub UAD auto-sync
+│   ├── devices.py            # Device listing, brand discovery, and device classification
+│   ├── packages.py           # Package listing, removal, restoration, and presets
+│   ├── security.py           # Security scanner, permission manager, process inspector
+│   ├── server.py             # Built-in HTTP server & REST API handlers
+│   └── settings.py           # Default apps, Private DNS, Knox warranty status
 ├── data/
-│   ├── packages.json          # Custom package database (199 entries)
-│   ├── brands.json            # Brand-specific packages (63 entries)
-│   ├── presets.json           # Debloat presets
-│   └── uad.json              # UAD list (5,399 entries, auto-synced)
+│   ├── packages.json         # Custom curated package classifications
+│   ├── brands.json           # OEM-specific bloatware database
+│   ├── presets.json          # Minimal, iPhone Efficiency, and Aggressive profiles
+│   └── uad.json              # 5,400+ UAD community entries (auto-synced every 24h)
 └── web/
-    ├── index.html             # Web UI
-    ├── app.js                 # Frontend logic
-    └── style.css              # Styling
+    ├── index.html            # Dark-mode interface
+    ├── app.js                # Frontend controllers, Activity Console & tutorials
+    └── style.css             # Stylesheet (SAMurai dark design tokens)
 ```
 
-## Package Classification
+---
 
-Packages are identified using a layered lookup:
+## 🛡️ Safety & Restoration Notes
 
-1. **Custom database** (`data/packages.json`) — your own classifications, highest priority
-2. **Brand database** (`data/brands.json`) — brand-specific bloatware (Xiaomi, OnePlus, etc.)
-3. **UAD database** (`data/uad.json`) — 5,400+ packages from the Universal Android Debloater project
-4. **Heuristic** — pattern-based classification for anything not in any database
+* **Non-Destructive**: All removals use Android's user-space command `pm uninstall -k --user 0`. The APK remains in the read-only `/system` partition, and your application data is preserved.
+* **Instant Undo**: Any removed package can be restored with a single click in the **Apps → Removed** tab.
+* **Knox-Safe**: Debloating via ADB **never trips Samsung Knox** (warranty bit remains `0x0`). Knox is only tripped by flashing unauthorized custom recovery/kernels.
+* **Factory Reset Safe**: Performing a factory reset on the phone will restore all OEM apps to factory state.
+* **No Root Required**: Works completely over standard ADB permissions without rooting or unlocking the bootloader.
 
-Risk levels:
-- **Safe** — confirmed bloatware, no side effects from removal
-- **Caution** — may affect some features; review before removing
-- **Dangerous** — system-critical; removal may cause crashes or bootloops
-- **Unknown** — not in any database; exercise caution
+---
 
-The UAD list auto-syncs from GitHub every 24 hours in the background. You can also manually sync from the Database tab.
+## 📄 License
 
-### Editing the databases
-
-You can add, edit, or remove entries in two ways:
-- **Web UI**: go to the Database tab, search/edit/add entries, click Save
-- **JSON files**: edit `data/packages.json` or `data/brands.json` directly, then click "Reload from disk" in the UI
-
-Entry format in `packages.json`:
-```json
-{
-  "com.example.bloatware": {
-    "name": "Example Bloat",
-    "category": "Bloatware",
-    "risk": "safe",
-    "desc": "Description of what this package does"
-  }
-}
-```
-
-## AI Providers
-
-Any OpenAI-compatible API works. Built-in providers:
-
-| Provider | Base URL | API Key Required |
-|----------|----------|-----------------|
-| NVIDIA Nemotron | `integrate.api.nvidia.com/v1` | Yes |
-| Google Gemini | `generativelanguage.googleapis.com/v1beta` | Yes |
-| OpenAI | `api.openai.com/v1` | Yes |
-| OpenRouter | `openrouter.ai/api/v1` | Yes |
-| Groq | `api.groq.com/openai/v1` | Yes |
-| Ollama (local) | `localhost:11434/v1` | No |
-| Custom | You set the URL | Optional |
-
-Every provider's base URL is editable — point it at any compatible endpoint.
-
-## Safety Notes
-
-- All removals use `pm uninstall -k --user 0` — this removes the app for the current user only, preserving data. The app still exists on the system partition and can be restored.
-- Packages marked **Dangerous** are checkbox-disabled in the UI to prevent accidental removal.
-- Work profiles (e.g., Intune-managed User 10) cannot be modified via ADB.
-- Factory reset restores all removed packages.
-- The tool never requires root access.
-
-## License
-
-MIT
+This project is licensed under the [MIT License](LICENSE).
