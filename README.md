@@ -1,8 +1,8 @@
 # 🥷 SAMurai — AI-Powered Android Debloater & Optimizer
 
-SAMurai is a lightweight, zero-dependency, web-based tool for debloating, securing, and optimizing Android smartphones and watches via ADB. It combines **intelligent Generative AI analysis** with a curated 5,400+ package database to safely remove bloatware, reduce background battery drain, and inspect real hardware health.
+SAMurai is a zero-dependency, web-based tool for debloating, securing, and optimizing Android smartphones and watches via ADB. It combines **autonomous Generative AI package analysis** with a curated 5,400+ package database to safely remove bloatware, reduce background battery drain, and inspect true hardware battery health.
 
-Runs entirely on the Python 3 standard library — no pip packages, node dependencies, or build tools required.
+Runs entirely on the Python 3 standard library — no pip packages, npm dependencies, or build tools required.
 
 Supports **Samsung Galaxy**, **Google Pixel**, **Xiaomi / HyperOS**, **OnePlus**, **Realme**, **OPPO**, and **Vivo** devices.
 
@@ -10,7 +10,54 @@ Supports **Samsung Galaxy**, **Google Pixel**, **Xiaomi / HyperOS**, **OnePlus**
 
 > [!WARNING]
 > ### ⚠️ Disclaimer — Use at Your Own Risk
-> Modifying system packages, restricting background processes, or altering system configurations can affect device stability and features. While SAMurai is designed with safety precautions (using non-destructive user-space uninstalls `pm uninstall -k --user 0` that keep data intact and are fully reversible), **you are solely responsible for actions performed on your device**. Always review package selections and create backups before applying aggressive presets.
+> Modifying system packages, restricting background processes, or altering system configurations can affect device stability. While SAMurai uses non-destructive user-space uninstalls (`pm uninstall -k --user 0`) that preserve data and are fully reversible, **you are solely responsible for actions performed on your device**. Always review package selections and create backups before applying aggressive presets.
+
+---
+
+## 🚀 Quick Start
+
+Launch SAMurai in seconds with our smart, zero-friction launchers that auto-discover ADB and resolve Python / `uv`:
+
+### 🍎 macOS (One-Click)
+```bash
+git clone https://github.com/antonysamuel/SAMurai-Android-Debloater.git
+cd SAMurai-Android-Debloater
+```
+Double-click **`SAMurai.command`** in Finder (or run `./SAMurai.sh` in Terminal).
+
+### 🐧 Linux (One-Click or Terminal)
+```bash
+git clone https://github.com/antonysamuel/SAMurai-Android-Debloater.git
+cd SAMurai-Android-Debloater
+./SAMurai.sh
+```
+
+### 🪟 Windows (Double-Click)
+```cmd
+git clone https://github.com/antonysamuel/SAMurai-Android-Debloater.git
+cd SAMurai-Android-Debloater
+```
+Double-click **`SAMurai.bat`** (or run `python debloater.py`).
+
+> [!TIP]
+> **Zero-Friction Runtime Resolution**: No Python 3 installed? The launcher automatically checks for Astral's `uv` (`uv run python`), offers one-click zero-root setup, and auto-discovers Android SDK platform-tools in your user directory if missing from `$PATH`.
+
+The dashboard opens automatically in your browser at `http://127.0.0.1:8080`.
+
+---
+
+## 📱 2-Minute Wireless Setup
+
+1. **Samsung One UI 6.0+**: Open **Settings → Security and privacy → Auto Blocker** and toggle it **OFF** *(Auto Blocker blocks wireless ADB handshakes and cable commands)*.
+2. **Enable Wireless Debugging**: Open **Settings → Developer Options → Wireless Debugging** and toggle it **ON**.
+3. **Pair the Device**:
+   * Tap *"Pair device with pairing code"*.
+   * In SAMurai's Dashboard, enter the IP, the 5-digit **Pairing Port** from the popup, and the 6-digit **Code** → Click **Pair**.
+4. **Connect**:
+   * Note the main IP & Port shown on the parent Wireless Debugging screen (not the pairing port).
+   * Enter the port and click **Connect**.
+
+*(You can also click **"Open Setup Guide"** in SAMurai's dashboard for an interactive 5-step animated walkthrough).*
 
 ---
 
@@ -55,16 +102,7 @@ One of SAMurai's standout features is the ability to read real, calibrated hardw
 
 ---
 
-### 2. AI-Powered Smart Cleanup & Optimization Assistant
-* **Autonomous Package Analysis**: Connect your preferred AI model (NVIDIA Nemotron, Google Gemini, OpenAI, Groq, OpenRouter, or local Ollama) to analyze your specific device package manifest.
-* **Custom Cleanup Plans**: AI reads your installed packages, cross-references with UAD risk lists, and generates a tailored debloat proposal grouped by purpose (e.g. carrier apps, redundant OEM bloat, telemetry).
-* **Interactive AI Chat**: Ask natural language questions like *"Can I safely remove Samsung Kids or Quick Share without breaking Bluetooth?"* directly inside the app.
-
-![AI Smart Cleanup](assets/ai-cleanup.png)
-
----
-
-### 3. One-Click Debloat Presets
+### 2. One-Click Debloat Presets
 Quickly optimize devices with tested debloat profiles:
 * **Minimal Cleanup**: Removes obvious bloatware (Bixby, promo apps, novelty watch faces, carrier diagnostics).
 * **iPhone Efficiency**: Removes safe bloatware and restricts background execution for aggressive power-hungry apps for a clean, snappy iOS-like standby experience.
@@ -74,14 +112,7 @@ Quickly optimize devices with tested debloat profiles:
 
 ---
 
-### 4. Interactive Wireless ADB Setup & Auto Blocker Guide
-* **Interactive 5-Step Tutorial**: Built-in modal walks users through unlocking Developer Options, wireless pairing, and dual-port configurations.
-* **Samsung One UI 6+ Auto Blocker Fix**: Detailed interactive guide on disabling Samsung's Auto Blocker (`Settings > Security and privacy > Auto Blocker`) which blocks wireless ADB handshakes and cable commands.
-* **Dual-Port Demystification**: Clear visual breakdown explaining the difference between the rotating pairing port and the persistent connection port.
-
----
-
-### 5. Deep Security Audit & Knox Verification
+### 3. Deep Security Audit & Knox Verification
 * **Security Scanner**: Inspects active **Device Administrators**, **Notification Listeners**, **Draw-over-other-apps (Overlay)** privileges, and audits **Sideloaded apps** installed from outside official stores.
 * **Samsung Knox & Warranty Bit**: Verifies hardware `warranty_bit` (`0x0`), verified boot state (`green`), and bootloader lock integrity.
 
@@ -90,7 +121,7 @@ Quickly optimize devices with tested debloat profiles:
 
 ---
 
-### 6. Hardware Optimization & System Tweaks
+### 4. Hardware Optimization & System Tweaks
 * **Performance Speedup**: Tune animation scaling (`0.5x` / off) for an instant snappier feel.
 * **Background Scanning**: Disable always-on Wi-Fi and Bluetooth background scanning to save battery.
 * **Storage TRIM**: Run manual hardware `fstrim` across flash storage partitions to reclaim deleted flash blocks and maintain high write speeds.
@@ -102,7 +133,7 @@ Quickly optimize devices with tested debloat profiles:
 
 ## 📋 Requirements
 
-* **Python 3.6+** (Standard library only — zero pip dependencies required)
+* **Python 3.6+** or Astral's **`uv`** (Standard library only — zero pip dependencies required)
 * **ADB** (Android Debug Bridge)
   * **macOS**: `brew install android-platform-tools`
   * **Debian / Ubuntu**: `sudo apt install adb`
@@ -110,59 +141,6 @@ Quickly optimize devices with tested debloat profiles:
   * **Arch Linux**: `sudo pacman -S android-tools`
   * **Windows**: Download standalone binaries from [Android SDK Platform Tools](https://developer.android.com/tools/releases/platform-tools)
 * **Wireless Debugging** or **USB Debugging** enabled on the Android device.
-
----
-
-## 🚀 Quick Start
-
-SAMurai includes smart, zero-friction launchers for every operating system that automatically detect your environment, auto-discover ADB in standard Android SDK paths if missing from `$PATH`, and resolve Python 3 or Astral's `uv`:
-
-### macOS (One-Click)
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/antonysamuel/SAMurai-Android-Debloater.git
-   cd SAMurai-Android-Debloater
-   ```
-2. Double-click `SAMurai.command` in Finder (or run `./SAMurai.sh` in Terminal).
-3. The dashboard will automatically launch at `http://127.0.0.1:8080`.
-
-### Linux (One-Click or Terminal)
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/antonysamuel/SAMurai-Android-Debloater.git
-   cd SAMurai-Android-Debloater
-   ```
-2. Run `./SAMurai.sh` (or double-click it in your desktop file manager).
-3. The dashboard will open in your default browser.
-
-### Windows (Double-Click or Command Prompt)
-1. Clone the repository:
-   ```cmd
-   git clone https://github.com/antonysamuel/SAMurai-Android-Debloater.git
-   cd SAMurai-Android-Debloater
-   ```
-2. Double-click `SAMurai.bat` (or run `python debloater.py`).
-3. The dashboard will open automatically.
-
-> [!TIP]
-> **Smart Runtime Resolution**: If system Python 3 is not installed or configured, the launcher automatically checks for Astral's `uv` (`uv run python`), offers one-click zero-root setup, and auto-discovers Android SDK platform-tools in your user directory.
-
----
-
-## 📱 Wireless Connection Guide
-
-1. **Samsung One UI 6.0+ Users**:
-   Open **Settings → Security and privacy → Auto Blocker** and toggle it **OFF**.
-2. **Enable Wireless Debugging**:
-   Go to **Settings → Developer Options → Wireless Debugging** and toggle it **ON**.
-3. **Pair the Device**:
-   * Tap *"Pair device with pairing code"*.
-   * In SAMurai's Dashboard, enter the IP, the 5-digit **Pairing Port** from the dialog, and the 6-digit **Code**.
-   * Click **Pair**.
-4. **Connect**:
-   * Note the main IP & Port shown on the parent Wireless Debugging screen (not the pairing port).
-   * Enter the port and click **Connect**.
-5. Once connected, your device model, real-time battery stats, and package counts will appear on the dashboard.
 
 ---
 
