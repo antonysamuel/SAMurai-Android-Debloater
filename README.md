@@ -1,6 +1,8 @@
-# SAMurai — Android Debloater & Optimizer
+# 🥷 SAMurai — AI-Powered Android Debloater & Optimizer
 
-A lightweight, zero-dependency, web-based tool for debloating, securing, and optimizing Android smartphones and watches via ADB. Runs entirely on the Python 3 standard library — no pip packages, node dependencies, or build tools required.
+SAMurai is a lightweight, zero-dependency, web-based tool for debloating, securing, and optimizing Android smartphones and watches via ADB. It combines **intelligent Generative AI analysis** with a curated 5,400+ package database to safely remove bloatware, reduce background battery drain, and inspect real hardware health.
+
+Runs entirely on the Python 3 standard library — no pip packages, node dependencies, or build tools required.
 
 Supports **Samsung Galaxy**, **Google Pixel**, **Xiaomi / HyperOS**, **OnePlus**, **Realme**, **OPPO**, and **Vivo** devices.
 
@@ -9,6 +11,21 @@ Supports **Samsung Galaxy**, **Google Pixel**, **Xiaomi / HyperOS**, **OnePlus**
 > [!WARNING]
 > ### ⚠️ Disclaimer — Use at Your Own Risk
 > Modifying system packages, restricting background processes, or altering system configurations can affect device stability and features. While SAMurai is designed with safety precautions (using non-destructive user-space uninstalls `pm uninstall -k --user 0` that keep data intact and are fully reversible), **you are solely responsible for actions performed on your device**. Always review package selections and create backups before applying aggressive presets.
+
+---
+
+## 🤖 The AI-Powered Debloating Advantage
+
+Traditional debloating tools rely strictly on static, one-size-fits-all package lists that quickly grow stale as OEMs push OS updates. SAMurai brings **LLM intelligence directly into your debloating workflow**:
+
+![AI Smart Cleanup](assets/ai-cleanup.png)
+
+* **Autonomous Manifest Analysis**: SAMurai reads your phone's live package manifest and feeds it to your chosen AI model. The AI cross-references your installed packages against the 5,400+ Universal Android Debloater database, classifies unknown OEM services, and crafts a customized, goal-driven debloat plan.
+* **Goal-Oriented Optimization**: Specify what you want to achieve — such as *"Aggressive Battery Saver"*, *"Minimalist Pixel-like Experience"*, or *"Gaming & RAM Headroom"* — and the AI evaluates which services to remove and which to restrict to background standby buckets.
+* **In-App AI Chat Consultant**: Ask natural language questions in real-time right inside the app (e.g. *"Can I safely remove `com.samsung.android.app.routines`?"* or *"What dependencies break if I uninstall Quick Share?"*).
+* **Multi-Provider & Offline Local AI**:
+  * **Cloud Providers**: Native support for **NVIDIA Nemotron**, **Google Gemini**, **OpenAI**, **Groq**, and **OpenRouter**.
+  * **100% Private & Offline**: Point SAMurai to local **Ollama** (`http://localhost:11434/v1`) running Llama 3, Mistral, or Gemma on your own machine. Zero API keys, zero cloud telemetry.
 
 ---
 
@@ -197,6 +214,15 @@ SAMurai/
 * **Knox-Safe**: Debloating via ADB **never trips Samsung Knox** (warranty bit remains `0x0`). Knox is only tripped by flashing unauthorized custom recovery/kernels.
 * **Factory Reset Safe**: Performing a factory reset on the phone will restore all OEM apps to factory state.
 * **No Root Required**: Works completely over standard ADB permissions without rooting or unlocking the bootloader.
+
+---
+
+## 🤝 Contributing & Pull Requests
+
+We welcome contributions from developers, maintainers, and Android power users worldwide!
+* **New Bloatware Classifications**: Add newly identified OEM packages or adjust safety tiers by submitting a PR to `data/packages.json` or `data/brands.json`.
+* **Zero-Dependency Policy**: Please maintain our zero-dependency architecture (pure Python 3 stdlib and vanilla HTML/CSS/JS).
+* **Guidelines & Templates**: Check our [Contributing Guide](CONTRIBUTING.md) and use our [Pull Request Template](.github/pull_request_template.md) when submitting PRs.
 
 ---
 
