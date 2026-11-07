@@ -98,14 +98,16 @@ Quickly optimize devices with tested debloat profiles:
 
 ## 🚀 Quick Start
 
+SAMurai includes smart, zero-friction launchers for every operating system that automatically detect your environment, auto-discover ADB in standard Android SDK paths if missing from `$PATH`, and resolve Python 3 or Astral's `uv`:
+
 ### macOS (One-Click)
 1. Clone the repository:
    ```bash
    git clone https://github.com/antonysamuel/SAMurai-Android-Debloater.git
    cd SAMurai-Android-Debloater
    ```
-2. Double-click `SAMurai.command` (or run `python3 debloater.py`).
-3. The web dashboard will open automatically at `http://127.0.0.1:8080`.
+2. Double-click `SAMurai.command` in Finder (or run `./SAMurai.sh` in Terminal).
+3. The dashboard will automatically launch at `http://127.0.0.1:8080`.
 
 ### Linux (One-Click or Terminal)
 1. Clone the repository:
@@ -113,15 +115,20 @@ Quickly optimize devices with tested debloat profiles:
    git clone https://github.com/antonysamuel/SAMurai-Android-Debloater.git
    cd SAMurai-Android-Debloater
    ```
-2. Run `./SAMurai.sh` (or `python3 debloater.py`).
-3. The browser will open automatically.
+2. Run `./SAMurai.sh` (or double-click it in your desktop file manager).
+3. The dashboard will open in your default browser.
 
-### Windows
-```cmd
-git clone https://github.com/antonysamuel/SAMurai-Android-Debloater.git
-cd SAMurai-Android-Debloater
-python debloater.py
-```
+### Windows (Double-Click or Command Prompt)
+1. Clone the repository:
+   ```cmd
+   git clone https://github.com/antonysamuel/SAMurai-Android-Debloater.git
+   cd SAMurai-Android-Debloater
+   ```
+2. Double-click `SAMurai.bat` (or run `python debloater.py`).
+3. The dashboard will open automatically.
+
+> [!TIP]
+> **Smart Runtime Resolution**: If system Python 3 is not installed or configured, the launcher automatically checks for Astral's `uv` (`uv run python`), offers one-click zero-root setup, and auto-discovers Android SDK platform-tools in your user directory.
 
 ---
 
@@ -148,7 +155,8 @@ python debloater.py
 SAMurai/
 ├── debloater.py              # Application entrypoint & HTTP server bootstrap
 ├── SAMurai.command           # macOS double-click launcher
-├── SAMurai.sh                # Linux launcher
+├── SAMurai.sh                # Linux & macOS smart shell launcher
+├── SAMurai.bat               # Windows double-click launcher
 ├── assets/                   # Screenshots and UI media
 │   ├── dashboard.png
 │   ├── apps-manager.png

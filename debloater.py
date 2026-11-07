@@ -13,7 +13,7 @@ from src.server import DebloaterHandler, PORT
 def main():
     load_ai_config()
 
-    print("\n  SAMurai v3.0 — Universal Android Debloater")
+    print("\n  SAMurai v3.2 — Universal Android Debloater")
     print("  ────────────────────────────────────────────")
 
     adb_check = run_adb(["version"])
