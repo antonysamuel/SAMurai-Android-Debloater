@@ -43,24 +43,26 @@ Categories=Utility;System;
 EOF
 cp AppDir/samurai.desktop AppDir/usr/share/applications/
 
-# Placeholder icon if assets doesn't have an icon yet
-if [ -f "assets/icon.png" ]; then
+# AppImage icon
+if [ -f "assets/icon_256.png" ]; then
+    cp assets/icon_256.png AppDir/samurai.png
+    cp assets/icon_256.png AppDir/.DirIcon
+    cp assets/icon_256.png AppDir/usr/share/icons/hicolor/256x256/apps/samurai.png
+elif [ -f "assets/icon.png" ]; then
     cp assets/icon.png AppDir/samurai.png
+    cp assets/icon.png AppDir/.DirIcon
     cp assets/icon.png AppDir/usr/share/icons/hicolor/256x256/apps/samurai.png
-else
-    # Copy any preview image as fallback icon
-    cp assets/dashboard.png AppDir/samurai.png
 fi
 
 # Download appimagetool if not locally available
 if ! command -v appimagetool >/dev/null 2>&1; then
     echo "==> Downloading appimagetool..."
-    curl -Ls -o appimagetool https://github.com/AppImage/AppImageKit/releases/download/13/appimagetool-x86_64.AppImage
+    curl -fSL -o appimagetool https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
     chmod +x appimagetool
     ARCH=x86_64 ./appimagetool --appimage-extract-and-run AppDir dist/SAMurai-x86_64.AppImage
     rm -f appimagetool
 else
-    ARCH=x86_64 appimagetool AppDir dist/SAMurai-x86_64.AppImage
+    ARCH=x86_64 appimagetool --appimage-extract-and-run AppDir dist/SAMurai-x86_64.AppImage
 fi
 
 echo ""
