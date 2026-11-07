@@ -16,23 +16,57 @@ Supports **Samsung Galaxy**, **Google Pixel**, **Xiaomi / HyperOS**, **OnePlus**
 
 ## 🚀 Quick Start
 
-Launch SAMurai in seconds with our smart, zero-friction launchers that auto-discover ADB and resolve Python / `uv`:
+Choose between our standalone prebuilt desktop applications or instant zero-dependency source runners:
 
-### 🍎 macOS (One-Click)
+### Option 1: Standalone Desktop Applications (Recommended)
+
+Download the latest prebuilt packages directly from our [GitHub Releases](https://github.com/antonysamuel/SAMurai-Android-Debloater/releases/latest):
+
+| Platform | Format | Download Link | Notes |
+| :--- | :--- | :--- | :--- |
+| **macOS** | `.dmg` installer | [**Download SAMurai-macOS.dmg**](https://github.com/antonysamuel/SAMurai-Android-Debloater/releases/latest) | Apple Silicon & Intel. Drag to `/Applications`. |
+| **Linux** | `.AppImage` | [**Download SAMurai-x86_64.AppImage**](https://github.com/antonysamuel/SAMurai-Android-Debloater/releases/latest) | Standalone package. `chmod +x` and run. |
+| **Windows** | Source / One-Click | [Run via `SAMurai.bat`](#option-2-run-from-source-zero-pip-dependencies) | Pure Python stdlib; no install needed. |
+
+> [!NOTE]
+> ### 🍎 macOS Gatekeeper Warning & Bypass Instructions
+> Because SAMurai is an open-source, community-driven project not signed with a paid Apple Developer certificate ($99/year), macOS Gatekeeper may present a dialog stating:
+> *"SAMurai.app cannot be opened because the developer cannot be verified"* or *"Apple cannot check it for malicious software."*
+>
+> You can bypass this in seconds using either method:
+>
+> 1. **Finder (GUI - Recommended)**:
+>    * Open `/Applications` in Finder.
+>    * **Right-click** (or `Control`-click) on **SAMurai.app** and choose **Open**.
+>    * Click **Open** in the confirmation dialog. macOS remembers this choice and won't prompt again.
+> 2. **Terminal (One-Line Command)**:
+>    * If macOS reports the application as damaged or blocked, open Terminal and run:
+>      ```bash
+>      xattr -cr /Applications/SAMurai.app
+>      ```
+>      *(This clears the `com.apple.quarantine` extended attribute attached by your browser).*
+
+---
+
+### Option 2: Run from Source (Zero pip dependencies)
+
+Launch SAMurai in seconds using our smart launchers that auto-discover ADB and resolve Python / `uv`:
+
+#### 🍎 macOS (One-Click)
 ```bash
 git clone https://github.com/antonysamuel/SAMurai-Android-Debloater.git
 cd SAMurai-Android-Debloater
 ```
 Double-click **`SAMurai.command`** in Finder (or run `./SAMurai.sh` in Terminal).
 
-### 🐧 Linux (One-Click or Terminal)
+#### 🐧 Linux (One-Click or Terminal)
 ```bash
 git clone https://github.com/antonysamuel/SAMurai-Android-Debloater.git
 cd SAMurai-Android-Debloater
-./SAMurai.sh
+chmod +x SAMurai.sh && ./SAMurai.sh
 ```
 
-### 🪟 Windows (Double-Click)
+#### 🪟 Windows (Double-Click)
 ```cmd
 git clone https://github.com/antonysamuel/SAMurai-Android-Debloater.git
 cd SAMurai-Android-Debloater
@@ -42,7 +76,7 @@ Double-click **`SAMurai.bat`** (or run `python debloater.py`).
 > [!TIP]
 > **Zero-Friction Runtime Resolution**: No Python 3 installed? The launcher automatically checks for Astral's `uv` (`uv run python`), offers one-click zero-root setup, and auto-discovers Android SDK platform-tools in your user directory if missing from `$PATH`.
 
-The dashboard opens automatically in your browser at `http://127.0.0.1:8080`.
+The dashboard opens automatically in your browser (or standalone desktop window) at `http://127.0.0.1:8080`.
 
 ---
 

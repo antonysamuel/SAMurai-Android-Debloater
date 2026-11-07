@@ -7,7 +7,7 @@ import time
 import urllib.request
 from pathlib import Path
 
-DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+from src.paths import get_data_file_path, save_data_file
 
 UAD_URL = "https://raw.githubusercontent.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/main/resources/assets/uad_lists.json"
 
@@ -20,18 +20,17 @@ _uad_syncing = False
 
 
 def _load_json(filename, default=None):
-    path = DATA_DIR / filename
+    path = get_data_file_path(filename)
     if path.exists():
         try:
-            return json.loads(path.read_text())
+            return json.loads(path.read_text(encoding="utf-8"))
         except Exception:
             pass
     return default if default is not None else {}
 
 
 def _save_json(filename, data):
-    DATA_DIR.mkdir(exist_ok=True)
-    (DATA_DIR / filename).write_text(json.dumps(data, indent=2, ensure_ascii=False))
+    save_data_file(filename, json.dumps(data, indent=2, ensure_ascii=False))
 
 
 def sync_uad_list():
@@ -83,7 +82,7 @@ def reload_databases():
 
 def _uad_is_stale():
     """Check if uad.json is missing or older than UAD_MAX_AGE."""
-    path = DATA_DIR / "uad.json"
+    path = get_data_file_path("uad.json")
     if not path.exists():
         return True
     try:

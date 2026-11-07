@@ -25,8 +25,24 @@ from src.settings import (
     import_profile, scan_network, set_default, set_dns,
 )
 
+from src.paths import WEB_DIR
+
 PORT = 8080
-WEB_DIR = Path(__file__).resolve().parent.parent / "web"
+
+
+def find_available_port(preferred=8080, max_attempts=20):
+    """Find an open TCP port starting at preferred."""
+    import socket
+    for p in range(preferred, preferred + max_attempts):
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            try:
+                s.bind(("127.0.0.1", p))
+                return p
+            except OSError:
+                continue
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.bind(("127.0.0.1", 0))
+        return s.getsockname()[1]
 
 
 class DebloaterHandler(http.server.SimpleHTTPRequestHandler):

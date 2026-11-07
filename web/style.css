@@ -55,6 +55,15 @@ body {
     border-bottom: 1px solid var(--border);
 }
 
+.brand-logo-img {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    display: block;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
 .brand-icon {
     font-size: 22px;
     color: var(--accent);

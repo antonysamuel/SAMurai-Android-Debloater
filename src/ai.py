@@ -4,7 +4,9 @@ import ssl
 import urllib.request
 from pathlib import Path
 
-AI_CONFIG_FILE = Path(__file__).resolve().parent.parent / ".ai_config.json"
+from src.paths import get_ai_config_path
+
+AI_CONFIG_FILE = get_ai_config_path()
 
 BUILTIN_PROVIDERS = {
     "nvidia": {
@@ -68,6 +70,7 @@ def save_ai_config(provider, api_key, model, base_url=""):
     if not api_key:
         api_key = _ai_config.get("api_key", "")
     _ai_config = {"provider": provider, "api_key": api_key, "model": model, "base_url": base_url}
+    AI_CONFIG_FILE.parent.mkdir(parents=True, exist_ok=True)
     AI_CONFIG_FILE.write_text(json.dumps(_ai_config))
 
 
